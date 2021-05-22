@@ -1,0 +1,48 @@
+---
+title: "project"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{project}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(PAGES)
+```
+
+
+## R project
+
+- All files kept at one place
+- Files rooted relative to the project
+
+Linux: `~/Documents/work/my_project`     
+Windows: `C:\Documents\work\myproject`
+
+
+
+
+## Data Management
+
+- Keep raw data outside of R project
+
+```{r out.width="100%"}
+# knitr::include_graphics("DM.png")
+```
+
+- Make data files `read-only`
+- Keep back-ups of the data directory: [UU surf drive](https://www.uu.nl/en/news/save-and-share-files-securely-with-surfdrive) 
+
+
+## Version control
+
+Experienced users will use version control, such as Git and Github, to keep track of the changes in their scripts over time. Rstudio project also integrate these options.
+

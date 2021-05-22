@@ -1,0 +1,123 @@
+---
+output: github_document
+bibliography: ["packages.bib", "PAGES.bib"]
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# PAGES
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of PAGES is to ...
+
+```{r pkgs, echo=FALSE, message=FALSE}
+# following code for loading and writing the bibtex references for the used pkgs
+pkgs <- c("dplyr", "tidyr", "tibble", "stringr", "readr", "magrittr",
+          "ggplot2", "purrr", "devtools", 
+          "roxygen2", "knitr", "rmarkdown",
+          "marelac", "datasauRus", "thematic")    
+# Get the R reference
+rref <- citation()
+# Create ref key
+rref$key <- "rversion"
+hadley <- bibentry(
+  key = "Wickham2015",
+  bibtype = "Book",
+  title = "R packages: organize, test, document, and share your code",
+  author =  person("Hadley","Wickham"),
+  year = "2015",
+  publisher = " O'Reilly Media, Inc.",
+  url = "https://r-pkgs.org/"
+  )
+knitr::write_bib(pkgs, "packages.bib", prefix = "")
+pkgs <- bibtex::read.bib("packages.bib")
+bibtex::write.bib(
+  purrr::reduce(list(rref, hadley, pkgs), append), 
+  file = "packages.bib"
+  )
+# copy vignettes
+fs::file_copy(
+  fs::path("PAGES", ext = "bib"), 
+  fs::path("vignettes/PAGES", ext = "bib"), 
+  overwrite = TRUE
+  )
+fs::file_copy(
+  fs::path("packages", ext = "bib"), 
+  fs::path("vignettes/packages", ext = "bib"), 
+  overwrite = TRUE
+  )
+# copy presentation
+fs::file_copy(
+  fs::path("PAGES", ext = "bib"), 
+  fs::path("inst", "presentation", "PAGES", ext = "bib"), 
+  overwrite = TRUE
+  )
+fs::file_copy(
+  fs::path("packages", ext = "bib"), 
+  fs::path("inst", "presentation", "packages", ext = "bib"), 
+  overwrite = TRUE
+  )
+```
+
+
+## Credits
+
+The construction of the R [@rversion] package *point* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown2018; @rmarkdown2020] and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *stringr* [@stringr], *readr* [@readr], *magrittr* [@magrittr], *readr* [@readr], and *purrr* [@purrr]. Plots are made with *ggplot2* [@ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
+
+
+## Installation
+
+You can install the released version of PAGES from [github](https://github.io) with:
+
+```r
+# Install point from GitHub:
+# install.packages("devtools")
+devtools::install_github("MartinSchobben/PAGES")
+```
+
+## Usage
+
+Load point with `library`.
+
+```{r}
+library(PAGES)
+library(tidyverse)
+``` 
+
+## Data sources 
+
+The study on the Triassic--Jurassic (~201 Ma) boundary section of Bonenburg (Germany) by @Schobben2019 is used as the example dataset in this course.
+
+
+## Tidy format
+
+A tidy format was created from the source files (look-up directory `data-raw` for details.).
+
+```{r tidy}
+head(bonenburg)
+```
+
+```{r strat}
+ggplot(data = bonenburg_long, aes(x = value, y = Height)) +
+  geom_line(orientation = "y") +
+  facet_grid(cols = vars(measurement), scales = "free_x") +
+  theme_classic()
+```
+
+
+
+
+
+
+# References

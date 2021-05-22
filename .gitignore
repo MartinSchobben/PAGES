@@ -1,0 +1,15 @@
+# secrets and environments
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.httr-oauth
+.Renviron
+.DS_Store
+
+# Github
+.github/
+
+# R project
+*.Rproj
+inst/doc

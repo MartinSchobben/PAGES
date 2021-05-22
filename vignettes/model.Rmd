@@ -1,0 +1,46 @@
+---
+title: "model"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{model}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(PAGES)
+library(datasauRus)
+library(ggplot2)
+library(dplyr)
+```
+
+
+# Introduction
+
+
+# datasauRus 
+
+```{r model, echo=FALSE, fig.width=7, fig.height=5}
+ggplot(data = filter(datasaurus_dozen, dataset != "x_shape"))+
+  geom_smooth(mapping = aes(x = x, y = y, colour = dataset), method = "lm")+
+  theme_classic()+
+  theme(legend.position = "none")+
+  facet_wrap(facets = vars(dataset), ncol = 3)
+```
+
+# Visualize data
+
+```{r plot, echo=FALSE, fig.width=7, fig.height=5}
+ggplot(data = filter(datasaurus_dozen, dataset != "x_shape"))+
+  geom_point(mapping = aes(x = x, y = y, colour = dataset))+
+  theme_void()+
+  theme(legend.position = "none")+
+  facet_wrap(facets = vars(dataset), ncol = 3)
+```

@@ -1,0 +1,60 @@
+---
+title: "explore"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{explore}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(PAGES)
+library(ggplot2)
+library(dplyr)
+```
+
+
+
+You will notice that the long format data is not the format of data table that you are normally used to. I will later on explain the transformation to obtain this type of data from the customary wide format data.
+
+
+```{r idf}
+ggplot(data = kuhjoch_long, mapping = aes(x = count, y = Height,  fill = label)) + 
+  geom_area(position = "identity", orientation = "y") +
+  facet_grid(cols = vars(type))
+```
+
+
+## Transformation and position
+
+Position adjustements appy transformation to the position of elements within a single layer.
+
+
+Here I use position `"fill"` which stacks the areas but also transforms so that it scales to 1 (or 100%).
+
+This is usefull behaviour for for instance palynological count data.
+
+
+
+
+```{r fill}
+ggplot(data = kuhjoch_long, mapping = aes(x = count, y = Height,  fill = label)) + 
+  geom_area(position = "fill", orientation = "y") +
+  facet_grid(cols = vars(type))
+```
+
+
+```{r manual, eval=FALSE}
+group_by(kuhjoch_long, Height, type) %>% 
+  mutate(percent = count / sum(count)) %>% 
+  ggplot(mapping = aes(x = percent, y = Height,  fill = label)) + 
+  geom_area(orientation = "y") +
+  facet_grid(cols = vars(type))
+```
