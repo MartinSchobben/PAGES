@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 # PAGES
 
 <!-- badges: start -->
@@ -72,17 +73,14 @@ fs::file_copy(
   )
 ```
 
-## R for Data Science (R4DS) 
 
+## R for Data Science (R4DS) 
 
 This class is completely modelled after Hadley Wickham's and Garrett Grolemund's R4DS. However, I have augmented the examples with cases from geology.
 
 ```{r cover, echo=FALSE, fig.cap="Book cover [@Wickham2016]", out.width="40%"}
 knitr::include_graphics("vignettes/figures/cover.png")
 ```
-
-
-</div>
 
 
 ## Credits
@@ -94,10 +92,10 @@ The construction of the R [@rversion] package *PAGES* and associated documentati
 
 You can install the released version of PAGES from [github](https://github.io) with:
 
-```r
+``` r
 # Install PAGES from GitHub:
 # install.packages("devtools")
-devtools::install_github("MartinSchobben/PAGES")
+devtools::install_github("MartinSchobben/PAGES", build_vignettes = TRUE)
 ```
 
 ## Usage

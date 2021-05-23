@@ -28,8 +28,6 @@ Book cover (Wickham and Grolemund 2016)
 
 </div>
 
-</div>
-
 ## Credits
 
 The construction of the R (R Core Team 2021) package *PAGES* and
@@ -55,7 +53,7 @@ You can install the released version of PAGES from
 ``` r
 # Install PAGES from GitHub:
 # install.packages("devtools")
-devtools::install_github("MartinSchobben/PAGES")
+devtools::install_github("MartinSchobben/PAGES", build_vignettes = TRUE)
 ```
 
 ## Usage
