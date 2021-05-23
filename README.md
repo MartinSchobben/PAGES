@@ -88,6 +88,25 @@ function `read_csv()`.
 readr::read_csv(PAGES_example("kuhjoch_raw.csv"))
 ```
 
+## Render presentation slides
+
+To render the presentation slides:
+
+``` r
+render_slides()
+```
+
+## Exercizes
+
+Details regarding the exercizes and live programming during the webinar
+can be found under the package vignettes (called with `vignette()`).
+
+-   RStudio projects: `vignette("project", package = "PAGES")`
+-   Exploratory data analysis: `vignette("explore", package = "PAGES")`
+-   Patterns and models: `vignette("model", package = "PAGES")`
+-   Load, tidy and transform data:
+    `vignette("wrangle", package = "PAGES")`
+
 ## Tidy format
 
 The lazy load datasets are provided in a tidy format. Look-up directory
