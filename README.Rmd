@@ -1,6 +1,6 @@
 ---
 output: github_document
-bibliography: ["packages.bib", "PAGES.bib"]
+bibliography: ["vignettes/packages.bib", "vignettes/PAGES.bib"]
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -43,31 +43,31 @@ hadley <- bibentry(
   publisher = " O'Reilly Media, Inc.",
   url = "https://r-pkgs.org/"
   )
-knitr::write_bib(pkgs, "packages.bib", prefix = "")
-pkgs <- bibtex::read.bib("packages.bib")
+knitr::write_bib(pkgs, "vignettes/packages.bib", prefix = "")
+pkgs <- bibtex::read.bib("vignettes/packages.bib")
 bibtex::write.bib(
   purrr::reduce(list(rref, hadley, pkgs), append), 
-  file = "packages.bib"
+  file = "vignettes/packages.bib"
   )
-# copy vignettes
-fs::file_copy(
-  fs::path("PAGES", ext = "bib"), 
-  fs::path("vignettes/PAGES", ext = "bib"), 
-  overwrite = TRUE
-  )
-fs::file_copy(
-  fs::path("packages", ext = "bib"), 
-  fs::path("vignettes/packages", ext = "bib"), 
-  overwrite = TRUE
-  )
+# # copy vignettes
+# fs::file_copy(
+#   fs::path("PAGES", ext = "bib"), 
+#   fs::path("vignettes/PAGES", ext = "bib"), 
+#   overwrite = TRUE
+#   )
+# fs::file_copy(
+#   fs::path("packages", ext = "bib"), 
+#   fs::path("vignettes/packages", ext = "bib"), 
+#   overwrite = TRUE
+#   )
 # copy presentation
 fs::file_copy(
-  fs::path("PAGES", ext = "bib"), 
+  fs::path("vignettes/PAGES", ext = "bib"), 
   fs::path("inst", "presentation", "PAGES", ext = "bib"), 
   overwrite = TRUE
   )
 fs::file_copy(
-  fs::path("packages", ext = "bib"), 
+  fs::path("vignettes/packages", ext = "bib"), 
   fs::path("inst", "presentation", "packages", ext = "bib"), 
   overwrite = TRUE
   )
@@ -76,7 +76,7 @@ fs::file_copy(
 
 ## R for Data Science (R4DS) 
 
-This class is completely modelled after Hadley Wickham's and Garrett Grolemund's R4DS. However, I have augmented the examples with cases from geology.
+This class is modelled after Hadley Wickham's and Garrett Grolemund's R4DS. However, I have augmented the examples with cases from geology.
 
 ```{r cover, echo=FALSE, fig.cap="Book cover [@Wickham2016]", out.width="40%"}
 knitr::include_graphics("vignettes/figures/cover.png")

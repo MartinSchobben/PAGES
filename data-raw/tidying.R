@@ -49,3 +49,4 @@ kuhjoch_long <- tidyr::pivot_longer(
   )
 
 usethis::use_data(kuhjoch_long, overwrite = TRUE)
+file.remove("data/kuhjoch_raw.rda")

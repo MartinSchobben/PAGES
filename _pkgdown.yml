@@ -1,0 +1,18 @@
+destination: docs
+reference:
+- title: "Kuhjoch datasets"
+  desc: "Palynological data of Kuhjoch (Austria; Triassic-Jurassic GSSP)"
+- contents:
+  - starts_with("kuhjoch")
+- title: "Bonenburg datasets"
+  desc: "Geochemical data of Bonenburg (Germany; Triassic-Jurassic)"
+- contents:
+  - starts_with("bonenburg")
+- title: "Raw Bonenburg and Kuhjoch csv files"
+  desc: "Pathway to internal csv files"
+- contents:
+  - PAGES_example
+- title: "PAGES presentation"
+  desc: "Render presentation ioslides"
+- contents:
+  - render_slides

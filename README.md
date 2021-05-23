@@ -15,9 +15,8 @@ universe](https://www.tidyverse.org/packages/).
 
 ## R for Data Science (R4DS)
 
-This class is completely modelled after Hadley Wickham’s and Garrett
-Grolemund’s R4DS. However, I have augmented the examples with cases from
-geology.
+This class is modelled after Hadley Wickham’s and Garrett Grolemund’s
+R4DS. However, I have augmented the examples with cases from geology.
 
 <div class="figure">
 

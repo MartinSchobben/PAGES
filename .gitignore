@@ -13,3 +13,4 @@
 # R project
 *.Rproj
 inst/doc
+docs
