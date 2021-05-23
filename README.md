@@ -6,24 +6,46 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of PAGES is to …
+The package PAGES was designed as supportive material for a webinar
+designed for the [PAGES Early-Career Network
+(ECN)](http://pastglobalchanges.org/ecn/intro). The goal is to give some
+useful pointers to explore geological data, in particular stratigraphic
+occurrences, and uses RStudio and packages from the [tidyverse
+universe](https://www.tidyverse.org/packages/).
+
+## R for Data Science (R4DS)
+
+This class is completely modelled after Hadley Wickham’s and Garrett
+Grolemund’s R4DS. However, I have augmented the examples with cases from
+geology.
+
+<div class="figure">
+
+<img src="vignettes/figures/cover.png" alt="Book cover [@Wickham2016]" width="40%" />
+<p class="caption">
+Book cover (Wickham and Grolemund 2016)
+</p>
+
+</div>
+
+</div>
 
 ## Credits
 
 The construction of the R (R Core Team 2021) package *point* and
 associated documentation was aided by the packages; *devtools* (Wickham,
-Hester, and Chang 2021), *roxygen2* (Wickham et al. 2020), *knitr* (Xie
-2014, 2015), *rmarkdown* (Xie, Allaire, and Grolemund 2018; Xie,
-Dervieux, and Riederer 2020) and the superb guidance in the book: *R
-packages: organize, test, document, and share your code*, by Wickham
-(2015). In addition, this package relies on a set of external packages
-from the tidyverse universe, including: *dplyr* (Wickham et al. 2021),
-*tidyr* (Wickham 2021), *tibble* (Müller and Wickham 2021), *stringr*
-(Wickham 2019), *readr* (Wickham and Hester 2020), *magrittr* (Bache and
-Wickham 2020), *readr* (Wickham and Hester 2020), and *purrr* (Henry and
-Wickham 2020). Plots are made with *ggplot2* (Wickham 2016) and
-*thematic* (Sievert, Schloerke, and Cheng 2021) is used for a consistent
-design in the presentation.
+Hester, and Chang 2021), *roxygen2* (Wickham, Danenberg, et al. 2020),
+*knitr* (Xie 2021, 2014, 2015), *rmarkdown* (Allaire et al. 2021; Xie,
+Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020) and the
+superb guidance in the book: *R packages: organize, test, document, and
+share your code*, by Wickham (2015). In addition, this package relies on
+a set of external packages from the tidyverse universe, including:
+*dplyr* (Wickham et al. 2021), *tidyr* (Wickham 2021), *tibble* (Müller
+and Wickham 2021), *stringr* (Wickham 2019), *readr* (Wickham and Hester
+2020), *magrittr* (Bache and Wickham 2020), and *readr* (Wickham and
+Hester 2020). Plots are made with *ggplot2* (Wickham, Chang, et al.
+2020; Wickham 2016) and *thematic* (Sievert, Schloerke, and Cheng 2021)
+is used for a consistent design in the presentation.
 
 ## Installation
 
@@ -31,38 +53,45 @@ You can install the released version of PAGES from
 [github](https://github.io) with:
 
 ``` r
-# Install point from GitHub:
+# Install PAGES from GitHub:
 # install.packages("devtools")
 devtools::install_github("MartinSchobben/PAGES")
 ```
 
 ## Usage
 
-Load point with `library`.
+Load PAGES with `library`.
 
 ``` r
 library(PAGES)
-library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-#> ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-#> ✓ tibble  3.1.2     ✓ dplyr   1.0.6
-#> ✓ tidyr   1.1.3     ✓ stringr 1.4.0
-#> ✓ readr   1.4.0     ✓ forcats 0.5.1
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> x dplyr::filter() masks stats::filter()
-#> x dplyr::lag()    masks stats::lag()
 ```
 
 ## Data sources
 
-The study on the Triassic–Jurassic (\~201 Ma) boundary section of
-Bonenburg (Germany) by Schobben et al. (2019) is used as the example
-dataset in this course.
+The study on the Triassic–Jurassic (\~201 Million years before present)
+boundary section of Bonenburg (Germany) and Kuhjoch (Austria) by
+Schobben et al. (2019) is used as the example material for this course.
+Lazy load datasets constitute:
+
+\-`kuhjoch` - Kuchjoch is a palynological dataset where the counts have
+summed for spores, pollen, aquatic and terrestrial elements.  
+-`bonenburg` - Bonenburg is a geochemical dataset containing: elemental
+analyser total organic carbon (TOC) and total nitrogen (TN), XRF element
+data; Aluminium (Al), Potassium (K) and sodium (Na), as well as the
+carbon isotope composition of TOC (del13Ctoc).
+
+Raw datasets (`kuhjoch_raw.csv` and `bonenburg_raw.csv`) can be easily
+accessed with the `PAGES_example()` function and a call to the `readr`
+function `read_csv()`.
+
+``` r
+readr::read_csv(PAGES_example("kuhjoch_raw.csv"))
+```
 
 ## Tidy format
 
-A tidy format was created from the source files (look-up directory
-`data-raw` for details.).
+The lazy load datasets are provided in a tidy format. Look-up directory
+`data-raw` for details on the data processing.
 
 ``` r
 head(bonenburg)
@@ -77,31 +106,37 @@ head(bonenburg)
 #> 6 Bonenb… Cont… Pre-e…      275   5.68  9.91  0.06     -27     1.19 0.0201 0.251
 ```
 
+Besides wide format data the similarly named datasets with the suffix
+`_long` are used to generate, for example, multi-proxy stratigraphic
+plost for initial data exploraiton.
+
 ``` r
-ggplot(data = bonenburg_long, aes(x = value, y = Height)) +
-  geom_line(orientation = "y") +
+ggplot(data = bonenburg_long) +
+  geom_point(mapping = aes(x = value, y = Height)) +
   facet_grid(cols = vars(measurement), scales = "free_x") +
   theme_classic()
 ```
 
-<img src="man/figures/README-strat-1.png" width="100%" />
+![](man/figures/README-strat-1.png)<!-- -->
 
 # References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-rmarkdown" class="csl-entry">
+
+Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin
+Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and
+Richard Iannone. 2021. *Rmarkdown: Dynamic Documents for r*.
+<https://CRAN.R-project.org/package=rmarkdown>.
+
+</div>
 
 <div id="ref-magrittr" class="csl-entry">
 
 Bache, Stefan Milton, and Hadley Wickham. 2020. *Magrittr: A
 Forward-Pipe Operator for r*.
 <https://CRAN.R-project.org/package=magrittr>.
-
-</div>
-
-<div id="ref-purrr" class="csl-entry">
-
-Henry, Lionel, and Hadley Wickham. 2020. *Purrr: Functional Programming
-Tools*. <https://CRAN.R-project.org/package=purrr>.
 
 </div>
 
@@ -168,6 +203,15 @@ Operations*. <https://CRAN.R-project.org/package=stringr>.
 
 </div>
 
+<div id="ref-ggplot2" class="csl-entry">
+
+Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen,
+Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey
+Dunnington. 2020. *Ggplot2: Create Elegant Data Visualisations Using the
+Grammar of Graphics*. <https://CRAN.R-project.org/package=ggplot2>.
+
+</div>
+
 <div id="ref-roxygen2" class="csl-entry">
 
 Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.
@@ -181,6 +225,14 @@ Wickham, Hadley, Peter Danenberg, Gábor Csárdi, and Manuel Eugster.
 Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2021.
 *Dplyr: A Grammar of Data Manipulation*.
 <https://CRAN.R-project.org/package=dplyr>.
+
+</div>
+
+<div id="ref-Wickham2016" class="csl-entry">
+
+Wickham, Hadley, and Garrett Grolemund. 2016. *<span class="nocase">R
+for data science: import, tidy, transform, visualize, and model
+data</span>*. O’Reilly Media, Inc. <https://r4ds.had.co.nz/index.html>.
 
 </div>
 
@@ -212,6 +264,13 @@ Hall/CRC. <http://www.crcpress.com/product/isbn/9781466561595>.
 
 ———. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton,
 Florida: Chapman; Hall/CRC. <https://yihui.org/knitr/>.
+
+</div>
+
+<div id="ref-knitr" class="csl-entry">
+
+———. 2021. *Knitr: A General-Purpose Package for Dynamic Report
+Generation in r*. <https://yihui.org/knitr/>.
 
 </div>
 

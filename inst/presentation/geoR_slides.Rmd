@@ -61,7 +61,7 @@ knitr::include_graphics("figures/datascience.png")
 
 **Each section:**    
 5-10 minutes of introduction    
-5-10 minutes of life coding and questions    
+5-10 minutes of live coding and questions    
 
 ``` r
 # Install point from GitHub:
@@ -186,7 +186,7 @@ knitr::include_graphics("figures/rstudio-project-3.png")
 ```
 
 <div class="notes">
-At some point you are more intested in the script that generated your figure than that you are interested in the figure it self. Then it is time to collect your data science project in own distinct environment.
+At some point you are more interested in the script that generated your figure than that you are interested in the figure it self. Then it is time to collect your data science project in own distinct environment.
 
 No more need for absolute pathways, only relative pathways witht the project as the lowest directory
 </div>

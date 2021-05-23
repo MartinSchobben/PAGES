@@ -1604,7 +1604,9 @@
          d=""
          inkscape:connector-curvature="0" />
       <g
-         id="g5670">
+         id="g5670"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300">
         <circle
            transform="scale(-1)"
            r="55.419106"
