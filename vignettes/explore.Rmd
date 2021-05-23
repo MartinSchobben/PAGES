@@ -22,7 +22,7 @@ library(PAGES)
 
 # Tidyverse packages
 
-In the following exercise I will use the packages `ggplot2` [@ggplot2; @ggplot22016] for plotting and `dplyr` [@dplyr] for data manipulations. Both pacakges are from the **tidyverse** collection.
+In the following exercise I will use the packages `ggplot2` [@ggplot2; @ggplot22016] for plotting and `dplyr` [@dplyr] for data manipulations. Both packages are from the **tidyverse** collection.
 
 
 ```{r extra}

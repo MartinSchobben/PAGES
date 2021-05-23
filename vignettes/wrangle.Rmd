@@ -1,5 +1,5 @@
 ---
-title: "wrangle"
+title: "Wrangling"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{wrangle}
@@ -19,16 +19,59 @@ library(PAGES)
 ```
 
 
-## Kuhjoch
+# Tidyverse packages
 
-```{r untidy, echo=FALSE}
+In this last exercise I show some functionality of the `tidyr` [@tidyr] package. From the website:
+
+```{r extra}
+library(tidyr)
+```
+
+"The goal of tidyr is to help you create tidy data. Tidy data is data where:
+
+- Every column is variable.
+- Every row is an observation.
+- Every cell is a single value.
+
+Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse."
+
+```{r tidy, echo=FALSE, out.width="40%"}
+knitr::include_graphics("figures/tidy.png")
+```
+
+## Kuhjoch wide format
+
+The following format of the data frame (or `tibble` in the tidyverse universe) is one that we are used to in publication. Here count data of all different elements each occupy their own column (i.e., variable).
+
+```{r wide, echo=FALSE}
 head(kuhjoch)
 ```
 
 
-## Kuhjoch
 
-```{r tidy, echo=FALSE}
-head(kuhjoch_long)
+However, we can also describe this data in a long format as the class of the values in the cells for the palynomorphs are all the same (i.e., all integer count data). So how can we make a long format data frame out of this.
+
+## Kuhjoch long format
+
+We can use the `tidyr` [@tidyr] function `pivot_longer()` to recast this data.
+
+```{r pivot, echo=FALSE, out.width="40%"}
+knitr::include_graphics("figures/pivot.png")
 ```
 
+However, the question is a bit of trick question, as the variable names also contain information. Actually there are variable contained in the column. In this case the part before the subscript `_` is a categorical variable dividing the the `label` again in two subsets; `"landplant"`; describing whether the variable `label` describe a characteristic of land plant community composition (either pollen or spores), and `"environment"`; describing whether the variable `label` describe a characteristic of the environment (is the palynomorph and aquatic or terrestrial component?).
+
+To achieve the previous describe transformation to a long format and the extraction of the information in the column names, we construc the following call.
+
+```{r long}
+# long format
+pivot_longer(
+  data = kuhjoch, 
+  cols = -Height,  
+  names_to = c("type", "label"),
+  values_to = "count",
+  names_sep = "_"
+  )
+```
+
+Note that in this call we select column with `-Height`, so we take everyhting except the height variable. Also note the vector of two elements for the `names_to` argument to define the two categorical columns and `name_sep` which controls how the original column names are split (e.g., `"_"`).

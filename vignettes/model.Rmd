@@ -1,46 +1,71 @@
 ---
-title: "model"
+title: "Patterns and models"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{model}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+bibliography: ["packages.bib", "PAGES.bib"]  
 ---
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
-)
+  )
 ```
 
 ```{r setup}
 library(PAGES)
+```
+
+
+# The datasauRus and tidyverse packages
+
+This exercise is largely constructed around the `datasauRus` [@datasauRus] package. In addition, I will use again the **tidyverse** collection packages `ggplot2` [@ggplot2; @ggplot22016] for plotting and `dplyr` [@dplyr] for data manipulations. 
+
+
+```{r}
 library(datasauRus)
 library(ggplot2)
-library(dplyr)
+library(dplyr, warn.conflicts = FALSE)
 ```
 
 
-# Introduction
+# Data
+
+The dataset `datasaurus_dozen` of the `datasauRus` [@datasauRus] package consists of one categorical variable `dataset` representing subsets of the data, which, in turn, all contain an `x` and `y` variable.
 
 
-# datasauRus 
+# Model datasauRus 
+
+First, we will model all datasets with a conventional least square linear regression with `geom_smooth()` and setting the argument `method` to `"lm". We see then that all
+
 
 ```{r model, echo=FALSE, fig.width=7, fig.height=5}
-ggplot(data = filter(datasaurus_dozen, dataset != "x_shape"))+
-  geom_smooth(mapping = aes(x = x, y = y, colour = dataset), method = "lm")+
-  theme_classic()+
-  theme(legend.position = "none")+
+ggplot(data = datasaurus_dozen) +
+  geom_smooth(mapping = aes(x = x, y = y, colour = dataset), method = "lm") +
+  theme_classic() +
+  theme(legend.position = "none") +
   facet_wrap(facets = vars(dataset), ncol = 3)
 ```
 
-# Visualize data
+
+The `theme()` and `theme_classic()` functions in this construction dictate certain visual aspects of the plots. They are of no further relevance. 
+
+
+# Visualize datasauRus
+
+These plot are a variant of plots known as *Anscombe plots*, after the statistician *Francis Anscombe*, demonstrating the importance of graphing data before analysing.
+
 
 ```{r plot, echo=FALSE, fig.width=7, fig.height=5}
-ggplot(data = filter(datasaurus_dozen, dataset != "x_shape"))+
-  geom_point(mapping = aes(x = x, y = y, colour = dataset))+
-  theme_void()+
-  theme(legend.position = "none")+
+ggplot(data = datasaurus_dozen) +
+  geom_point(mapping = aes(x = x, y = y, colour = dataset)) +
+  theme_void() +
+  theme(legend.position = "none") +
   facet_wrap(facets = vars(dataset), ncol = 3)
 ```
+
+
+# Reference

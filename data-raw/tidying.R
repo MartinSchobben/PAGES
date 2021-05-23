@@ -35,6 +35,7 @@ kuhjoch <- dplyr::rowwise(kuhjoch) %>%
    environment_aquatic = sum(dplyr::c_across(any_of(aquatic_nm)), na.rm = TRUE)
    ) %>%
   dplyr::mutate(environment_terrestrial = landplant_pollen + landplant_spores) %>%
+  dplyr::mutate(across(-Height, as.integer)) %>%
   dplyr::ungroup()
 
 usethis::use_data(kuhjoch, overwrite = TRUE)

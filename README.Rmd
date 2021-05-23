@@ -87,7 +87,7 @@ knitr::include_graphics("vignettes/figures/cover.png")
 
 ## Credits
 
-The construction of the R [@rversion] package *point* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr; @knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown; @rmarkdown2018; @rmarkdown2020] and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *stringr* [@stringr], *readr* [@readr], *magrittr* [@magrittr], and *readr* [@readr]. Plots are made with *ggplot2* [@ggplot2; @ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
+The construction of the R [@rversion] package *PAGES* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr; @knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown; @rmarkdown2018; @rmarkdown2020] and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *stringr* [@stringr], *readr* [@readr], *magrittr* [@magrittr], and *readr* [@readr]. Plots are made with *ggplot2* [@ggplot2; @ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
 
 
 ## Installation
@@ -110,7 +110,7 @@ library(PAGES)
 
 ## Data sources 
 
-The study on the Triassic--Jurassic (~201 Million years before present) boundary section of Bonenburg (Germany) and Kuhjoch (Austria) by @Schobben2019 is used as the example material for this course. Lazy load datasets constitute:
+The study on the Triassic--Jurassic (~201 million years before present) boundary section of Bonenburg (Germany) and Kuhjoch (Austria) by @Schobben2019 is used as the example material for this course. Lazy load datasets constitute:
 
 -`kuhjoch` - Kuchjoch is a palynological dataset where the counts have summed for spores, pollen, aquatic and terrestrial elements.    
 -`bonenburg` - Bonenburg is a geochemical dataset containing: elemental analyser total organic carbon (TOC) and total nitrogen (TN), XRF element data; Aluminium (Al), Potassium (K) and sodium (Na), as well as the carbon isotope composition of TOC (del13Ctoc).   

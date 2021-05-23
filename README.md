@@ -32,7 +32,7 @@ Book cover (Wickham and Grolemund 2016)
 
 ## Credits
 
-The construction of the R (R Core Team 2021) package *point* and
+The construction of the R (R Core Team 2021) package *PAGES* and
 associated documentation was aided by the packages; *devtools* (Wickham,
 Hester, and Chang 2021), *roxygen2* (Wickham, Danenberg, et al. 2020),
 *knitr* (Xie 2021, 2014, 2015), *rmarkdown* (Allaire et al. 2021; Xie,
@@ -68,7 +68,7 @@ library(PAGES)
 
 ## Data sources
 
-The study on the Triassic–Jurassic (\~201 Million years before present)
+The study on the Triassic–Jurassic (\~201 million years before present)
 boundary section of Bonenburg (Germany) and Kuhjoch (Austria) by
 Schobben et al. (2019) is used as the example material for this course.
 Lazy load datasets constitute:
