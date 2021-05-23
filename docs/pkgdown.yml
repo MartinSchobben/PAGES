@@ -1,0 +1,10 @@
+pandoc: 2.11.4
+pkgdown: 1.6.1
+pkgdown_sha: ~
+articles:
+  explore: explore.html
+  model: model.html
+  project: project.html
+  wrangle: wrangle.html
+last_built: 2021-05-23T17:33Z
+
