@@ -20,7 +20,7 @@ R4DS. However, I have augmented the examples with cases from geology.
 
 <div class="figure">
 
-<img src="vignettes/figures/cover.png" alt="Book cover [@Wickham2016]" width="40%" />
+<img src="man/figures/cover.png" alt="Book cover [@Wickham2016]" width="40%" />
 <p class="caption">
 Book cover (Wickham and Grolemund 2016)
 </p>

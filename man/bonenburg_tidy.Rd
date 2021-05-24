@@ -15,7 +15,7 @@ A data frame with 81 rows and 12 variables:
   \item{CaCO3}{Calcium carbonate content in units weight percent of rock}
   \item{TN}{Total nitrogen in units weight percent of rock}
   \item{del13Ctoc}{Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite}
-  \item{TOC}{Total organic carbon on carbonate free basis in units weight percent of rock}
+  \item{TOCcfb}{Total organic carbon on carbonate free basis in units weight percent of rock}
   \item{Al2O3_pc}{XRF Aliminium oxide in units weight percent of rock}
   \item{Na2O_pc}{XRF Sodium oxide in units weight percent of rock}
   \item{K2O_pc}{XRF Potasium oxide in units weight percent of rock}

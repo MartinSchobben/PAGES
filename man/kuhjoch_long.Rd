@@ -3,7 +3,7 @@
 \docType{data}
 \name{kuhjoch_long}
 \alias{kuhjoch_long}
-\title{Kuhjoch palynological dataset}
+\title{Kuhjoch palynological dataset long format}
 \format{
 A data frame with 180 rows and 4 variables:
 \describe{
@@ -20,6 +20,6 @@ https://www.schweizerbart.de/papers/nos/detail/52/90527/A_comparative_study_of_t
 kuhjoch_long
 }
 \description{
-Kuhjoch palynological dataset
+Kuhjoch palynological dataset long format
 }
 \keyword{datasets}

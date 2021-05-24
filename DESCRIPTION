@@ -1,27 +1,29 @@
 Package: PAGES
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
 License: GPL (>= 3)
+Title: Data and slides of the PAGES seminar
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Martin",
+           family = "Schobben",
+           role = c("aut", "cre"),
+           email = "schobbenmartin@gmail.com",
+           comment = c(ORCID = "0000-0001-8560-0037"))
+Description: The package contains the data discussed during the seminar as well as allows recreating the slides of the presentation.
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
-Imports: 
-    magrittr,
-    dplyr,
-    tidyr,
-    ggplot2,
-    marelac,
-    datasauRus,
-    readr,
-    modelr,
-    rmarkdown,
-    knitr,
-    thematic
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
+Imports: 
+    datasauRus (>= 0.1.4),
+    dplyr (>= 1.0.6),
+    ggplot2 (>= 3.3.3),
+    knitr (>= 1.33),
+    marelac (>= 2.1.10),
+    modelr (>= 0.1.8),
+    readr (>= 1.4.0),
+    rmarkdown (>= 2.8),
+    thematic (>= 0.1.2),
+    tidyr (>= 1.1.3)

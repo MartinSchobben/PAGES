@@ -49,17 +49,6 @@ bibtex::write.bib(
   purrr::reduce(list(rref, hadley, pkgs), append), 
   file = "vignettes/packages.bib"
   )
-# # copy vignettes
-# fs::file_copy(
-#   fs::path("PAGES", ext = "bib"), 
-#   fs::path("vignettes/PAGES", ext = "bib"), 
-#   overwrite = TRUE
-#   )
-# fs::file_copy(
-#   fs::path("packages", ext = "bib"), 
-#   fs::path("vignettes/packages", ext = "bib"), 
-#   overwrite = TRUE
-#   )
 # copy presentation
 fs::file_copy(
   fs::path("vignettes/PAGES", ext = "bib"), 
@@ -79,7 +68,7 @@ fs::file_copy(
 This class is modelled after Hadley Wickham's and Garrett Grolemund's R4DS. However, I have augmented the examples with cases from geology.
 
 ```{r cover, echo=FALSE, fig.cap="Book cover [@Wickham2016]", out.width="40%"}
-knitr::include_graphics("vignettes/figures/cover.png")
+knitr::include_graphics("man/figures/cover.png")
 ```
 
 

@@ -12,6 +12,7 @@ bonenburg_tidy <- dplyr::select(bonenburg_raw, -Reference) %>%
 bonenburg_tidy <- dplyr::relocate(bonenburg_tidy, c(Section, Strat, Strat2))
 
 usethis::use_data(bonenburg_tidy, overwrite = TRUE)
+file.remove("data/bonenburg_raw.rda")
 
 # palynology with 147 observations
 kuhjoch <- dplyr::select(kuhjoch_raw, -c(Reference, Reference2))
