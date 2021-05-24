@@ -1,6 +1,8 @@
 ---
-title: "Wrangling"
+title: "4. Wrangling"
 output: rmarkdown::html_vignette
+pkgdown:
+  as_is: true
 vignette: >
   %\VignetteIndexEntry{wrangle}
   %\VignetteEngine{knitr::rmarkdown}

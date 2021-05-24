@@ -1,6 +1,8 @@
 ---
-title: "Patterns and models"
+title: "3. Patterns and models"
 output: rmarkdown::html_vignette
+pkgdown:
+  as_is: true
 vignette: >
   %\VignetteIndexEntry{model}
   %\VignetteEngine{knitr::rmarkdown}
@@ -42,7 +44,7 @@ The `datasaurus_dozen` dataset of the `datasauRus` [@datasauRus] package consist
 First, we will model all datasets with a conventional least square linear regression with `geom_smooth()` and by setting the argument `method` to `"lm"`. We see then that all subsets can be fitted with more-or-less similar models.
 
 
-```{r model, echo=FALSE, fig.width=7, fig.height=5}
+```{r model, echo=FALSE, fig.width=7, fig.height=7}
 ggplot(data = datasaurus_dozen) +
   geom_smooth(mapping = aes(x = x, y = y, colour = dataset), method = "lm") +
   theme_classic() +
@@ -59,7 +61,7 @@ The `theme()` and `theme_classic()` functions in this construction dictate certa
 These plots are a variant of plots known as *Anscombe plots*, after the statistician *Francis Anscombe*, demonstrating the importance of graphing data before analysing.
 
 
-```{r plot, echo=FALSE, fig.width=7, fig.height=5}
+```{r plot, echo=FALSE, fig.width=7, fig.height=7}
 ggplot(data = datasaurus_dozen) +
   geom_point(mapping = aes(x = x, y = y, colour = dataset)) +
   theme_void() +

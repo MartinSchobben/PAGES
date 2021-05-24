@@ -1,6 +1,8 @@
 ---
-title: "Data (geo)science project"
+title: "1. Data (geo)science project"
 output: rmarkdown::html_vignette
+pkgdown:
+  as_is: true
 vignette: >
   %\VignetteIndexEntry{project}
   %\VignetteEngine{knitr::rmarkdown}
@@ -37,17 +39,22 @@ To create an RStudio project select `File` from the top toolbar, and from the dr
 
 Select New Directory to create a new folder.
 
+
 ```{r rstudio1, echo=FALSE, out.width="80%"}
 knitr::include_graphics("figures/rstudio-project-1.png")
 ```
 
+
 Select New Project to create a clean RStudio Project.
+
 
 ```{r rstudio2, echo=FALSE, out.width="80%"}
 knitr::include_graphics("figures/rstudio-project-2.png")
 ```
 
+
 Name the New Project. I used here `PAGES`.
+
 
 ```{r rstudio3, echo=FALSE, out.width="80%"}
 knitr::include_graphics("figures/rstudio-project-3.png")
@@ -67,23 +74,26 @@ After creating a RStudio project, I advice setting up an ordered file structure.
 knitr::include_graphics("figures/project-structure.png")
 ```
 
+
 To change the permission of files in Linux Ubuntu/Mint select the following by right clicking on the file.
+
 
 ```{r out.width="80%", echo=FALSE}
 knitr::include_graphics("figures/permissions.png")
 ```
 
-For windows 10 check: https://windowsreport.com/folder-reverting-to-read-only/#1
+
+For windows 10 check: https://windowsreport.com/folder-reverting-to-read-only/#1     
 For MAC OS Mojavo check: https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac
 
-Keep back-ups of the raw data directories as a minimum, but preferably the whole directory. Accidents are bound to happen, so to not jeopardize the progress in a time-intensive and expensive research project, the previous recommendations are good practice to prevent future sorrow. Besides back-ups on external hard-drives, universities and research institutes often provide cloud services to sync and back-up materials. Otherwise commercial options are available, such as [SpiderOak](https://spideroak.com/one/)^TM^.
+Keep back-ups of the raw data directories as a minimum, but preferably the whole directory. Accidents are bound to happen! The previous recommendations are good practice to prevent future sorrow that jeopardizes the progress in a time-intensive and expensive research project. Besides back-ups on external hard-drives, universities and research institutes often provide cloud services to sync and back-up materials. Otherwise commercial options are available, such as [SpiderOak](https://spideroak.com/one/)^TM^.
 
 
 ## Version control
 
 Experienced users will use version control, such as Git and Github, to keep track of the changes in their scripts over time. The RStudio Project also integrate this option in its interface.
 
-This is my github frontpage, where I have several repositories containing as a remote back-up of my scripts and the complete history of revisions through Git version control.
+This is my github front-page, where I have several repositories containing as a remote back-up of my scripts and the complete history of revisions through Git version control.
 
 
 ```{r out.width="80%", echo=FALSE}

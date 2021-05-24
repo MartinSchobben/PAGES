@@ -67,6 +67,7 @@ fs::file_copy(
 
 This class is modelled after Hadley Wickham's and Garrett Grolemund's R4DS. However, I have augmented the examples with cases from geology.
 
+
 ```{r cover, echo=FALSE, fig.cap="Book cover [@Wickham2016]", out.width="40%"}
 knitr::include_graphics("man/figures/cover.png")
 ```
@@ -77,6 +78,7 @@ knitr::include_graphics("man/figures/cover.png")
 The construction of the R [@rversion] package *PAGES* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr; @knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown; @rmarkdown2018; @rmarkdown2020] and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *stringr* [@stringr], *readr* [@readr], *magrittr* [@magrittr], and *readr* [@readr]. Plots are made with *ggplot2* [@ggplot2; @ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
 
 The package *marelac* [@marelac] is used for chemical data and transformations, and the package *datasauRus* [@datasauRus] is used as an example for the strength of plotting data.
+
 
 ## Installation
 
@@ -96,6 +98,7 @@ Load PAGES with `library`.
 library(PAGES)
 ``` 
 
+
 ## Data sources 
 
 The study on the Triassic--Jurassic (~201 million years before present) boundary section of Bonenburg (Germany) and Kuhjoch (Austria) by @Schobben2019 is used as the example material for this course. Lazy load datasets constitute:
@@ -105,9 +108,11 @@ The study on the Triassic--Jurassic (~201 million years before present) boundary
 
 Raw datasets (`kuhjoch_raw.csv` and `bonenburg_raw.csv`) can be easily accessed with the `PAGES_example()` function and a call to the `readr` function `read_csv()`.
 
+
 ``` r 
 readr::read_csv(PAGES_example("kuhjoch_raw.csv"))
 ```
+
 
 ## Render presentation slides
 
@@ -118,26 +123,30 @@ To render the presentation slides:
 render_slides()
 ```
 
-## Exercizes
+## Exercises
 
-Details regarding the exercizes and live programming during the webinar can be found under the package vignettes (called with `vignette()`).
+Details regarding the exercise and live programming during the webinar can be found under the package vignettes (called with `vignette()`).
 
 - RStudio projects: `vignette("project", package = "PAGES")`
 - Exploratory data analysis: `vignette("explore", package = "PAGES")`
 - Patterns and models: `vignette("model", package = "PAGES")`
 - Load, tidy and transform data: `vignette("wrangle", package = "PAGES")`
 
+
 ## Tidy format
 
-The lazy load datasets are provided in a tidy format. Look-up directory `data-raw` for details on the data processing.
+The lazy load datasets are provided in a tidy format. Look-up directory `data-raw` on the Github repository for details on the data processing.
+
 
 ```{r tidy}
 head(bonenburg)
 ```
 
-Besides wide format data the similarly named datasets with the suffix `_long` are used to generate, for example, multi-proxy stratigraphic plost for initial data exploraiton.
 
-```{r strat, fig.height=5, fig.width=8}
+Besides wide format data the similarly named datasets with the suffix `_long` are used to generate, for example, multi-proxy stratigraphic plots for initial data exploration.
+
+
+```{r strat, fig.height=4, fig.width=8, fig.cap="Bonenburg geochemical data traversing the Triassic-Jurassic boundary."}
 ggplot(data = bonenburg_long) +
   geom_point(mapping = aes(x = value, y = Height)) +
   facet_grid(cols = vars(measurement), scales = "free_x") +

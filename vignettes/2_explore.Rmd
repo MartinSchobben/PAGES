@@ -1,6 +1,8 @@
 ---
-title: "Exploratory data analysis"
+title: "2. Exploratory data analysis"
 output: rmarkdown::html_vignette
+pkgdown:
+  as_is: true
 vignette: >
   %\VignetteIndexEntry{explore}
   %\VignetteEngine{knitr::rmarkdown}

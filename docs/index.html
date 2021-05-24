@@ -53,17 +53,19 @@
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="articles/explore.html">Exploratory data analysis</a>
+<li class="divider">
+    <li class="dropdown-header">Exercises</li>
+    <li>
+      <a href="articles/1_project.html">1. Data (geo)science project</a>
     </li>
     <li>
-      <a href="articles/model.html">Patterns and models</a>
+      <a href="articles/2_explore.html">2. Exploratory data analysis</a>
     </li>
     <li>
-      <a href="articles/project.html">Data (geo)science project</a>
+      <a href="articles/3_model.html">3. Patterns and models</a>
     </li>
     <li>
-      <a href="articles/wrangle.html">Wrangling</a>
+      <a href="articles/4_wrangle.html">4. Wrangling</a>
     </li>
   </ul>
 </li>
@@ -136,25 +138,25 @@ Book cover (Wickham and Grolemund 2016)
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/render_slides.html">render_slides</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="exercizes" class="section level2">
+<div id="exercises" class="section level2">
 <h2 class="hasAnchor">
-<a href="#exercizes" class="anchor"></a>Exercizes</h2>
-<p>Details regarding the exercizes and live programming during the webinar can be found under the package vignettes (called with <code><a href="https://rdrr.io/r/utils/vignette.html">vignette()</a></code>).</p>
+<a href="#exercises" class="anchor"></a>Exercises</h2>
+<p>Details regarding the exercise and live programming during the webinar can be found under the package vignettes (called with <code><a href="https://rdrr.io/r/utils/vignette.html">vignette()</a></code>).</p>
 <ul>
-<li>RStudio projects: <code><a href="articles/project.html">vignette("project", package = "PAGES")</a></code>
+<li>RStudio projects: <code>vignette("project", package = "PAGES")</code>
 </li>
-<li>Exploratory data analysis: <code><a href="articles/explore.html">vignette("explore", package = "PAGES")</a></code>
+<li>Exploratory data analysis: <code>vignette("explore", package = "PAGES")</code>
 </li>
-<li>Patterns and models: <code><a href="articles/model.html">vignette("model", package = "PAGES")</a></code>
+<li>Patterns and models: <code>vignette("model", package = "PAGES")</code>
 </li>
-<li>Load, tidy and transform data: <code><a href="articles/wrangle.html">vignette("wrangle", package = "PAGES")</a></code>
+<li>Load, tidy and transform data: <code>vignette("wrangle", package = "PAGES")</code>
 </li>
 </ul>
 </div>
 <div id="tidy-format" class="section level2">
 <h2 class="hasAnchor">
 <a href="#tidy-format" class="anchor"></a>Tidy format</h2>
-<p>The lazy load datasets are provided in a tidy format. Look-up directory <code>data-raw</code> for details on the data processing.</p>
+<p>The lazy load datasets are provided in a tidy format. Look-up directory <code>data-raw</code> on the Github repository for details on the data processing.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">bonenburg</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 6 x 11</span>
@@ -166,13 +168,13 @@ Book cover (Wickham and Grolemund 2016)
 <span class="co">#&gt; 4 Bonenb… Cont… Pre-e…      200   4.94 12.8   0.07     -27.8   1.52 0.0231 0.236</span>
 <span class="co">#&gt; 5 Bonenb… Cont… Pre-e…      250   5.25  3.34  0.09     -27.6   2.45 0.0330 0.243</span>
 <span class="co">#&gt; 6 Bonenb… Cont… Pre-e…      275   5.68  9.91  0.06     -27     1.19 0.0201 0.251</span></code></pre></div>
-<p>Besides wide format data the similarly named datasets with the suffix <code>_long</code> are used to generate, for example, multi-proxy stratigraphic plost for initial data exploraiton.</p>
+<p>Besides wide format data the similarly named datasets with the suffix <code>_long</code> are used to generate, for example, multi-proxy stratigraphic plots for initial data exploration.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">bonenburg_long</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">geom_point</span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">value</span>, y <span class="op">=</span> <span class="va">Height</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">facet_grid</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu">vars</span><span class="op">(</span><span class="va">measurement</span><span class="op">)</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">theme_classic</span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<p><img src="reference/figures/README-strat-1.png"><!-- --></p>
+<p><img src="reference/figures/README-strat-1.png" alt="Bonenburg geochemical data traversing the Triassic-Jurassic boundary."></p>
 </div>
 </div>
 <div id="references" class="section level1">

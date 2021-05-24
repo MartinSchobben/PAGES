@@ -98,9 +98,9 @@ To render the presentation slides:
 render_slides()
 ```
 
-## Exercizes
+## Exercises
 
-Details regarding the exercizes and live programming during the webinar
+Details regarding the exercise and live programming during the webinar
 can be found under the package vignettes (called with `vignette()`).
 
 -   RStudio projects: `vignette("project", package = "PAGES")`
@@ -112,7 +112,7 @@ can be found under the package vignettes (called with `vignette()`).
 ## Tidy format
 
 The lazy load datasets are provided in a tidy format. Look-up directory
-`data-raw` for details on the data processing.
+`data-raw` on the Github repository for details on the data processing.
 
 ``` r
 head(bonenburg)
@@ -129,7 +129,7 @@ head(bonenburg)
 
 Besides wide format data the similarly named datasets with the suffix
 `_long` are used to generate, for example, multi-proxy stratigraphic
-plost for initial data exploraiton.
+plots for initial data exploration.
 
 ``` r
 ggplot(data = bonenburg_long) +
@@ -138,7 +138,8 @@ ggplot(data = bonenburg_long) +
   theme_classic()
 ```
 
-![](man/figures/README-strat-1.png)<!-- -->
+![Bonenburg geochemical data traversing the Triassic-Jurassic
+boundary.](man/figures/README-strat-1.png)
 
 # References
 

@@ -2,9 +2,9 @@ pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  explore: explore.html
-  model: model.html
-  project: project.html
-  wrangle: wrangle.html
-last_built: 2021-05-24T07:13Z
+  1_project: 1_project.html
+  2_explore: 2_explore.html
+  3_model: 3_model.html
+  4_wrangle: 4_wrangle.html
+last_built: 2021-05-24T08:16Z
 

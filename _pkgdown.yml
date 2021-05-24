@@ -16,3 +16,12 @@ reference:
   desc: "Render presentation ioslides"
 - contents:
   - render_slides
+articles:
+- title: "Exercises"
+  navbar: "Exercises"
+  contents:
+  - 1_project
+  - 2_explore
+  - 3_model
+  - 4_wrangle
+
