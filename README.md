@@ -4,6 +4,8 @@
 # PAGES
 
 <!-- badges: start -->
+
+[![DOI](https://zenodo.org/badge/370009359.svg)](https://zenodo.org/badge/latestdoi/370009359)
 <!-- badges: end -->
 
 The package PAGES was designed as supportive material for a webinar
