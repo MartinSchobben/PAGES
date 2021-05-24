@@ -34,12 +34,12 @@ library(dplyr, warn.conflicts = FALSE)
 
 # Data
 
-The dataset `datasaurus_dozen` of the `datasauRus` [@datasauRus] package consists of one categorical variable `dataset` representing subsets of the data, which, in turn, all contain an `x` and `y` variable.
+The `datasaurus_dozen` dataset of the `datasauRus` [@datasauRus] package consists of one categorical variable `dataset` representing subsets of the data, which, in turn, all contain an `x` and `y` variable.
 
 
 # Model datasauRus 
 
-First, we will model all datasets with a conventional least square linear regression with `geom_smooth()` and setting the argument `method` to `"lm". We see then that all
+First, we will model all datasets with a conventional least square linear regression with `geom_smooth()` and by setting the argument `method` to `"lm"`. We see then that all subsets can be fitted with more-or-less similar models.
 
 
 ```{r model, echo=FALSE, fig.width=7, fig.height=5}
@@ -56,7 +56,7 @@ The `theme()` and `theme_classic()` functions in this construction dictate certa
 
 # Visualize datasauRus
 
-These plot are a variant of plots known as *Anscombe plots*, after the statistician *Francis Anscombe*, demonstrating the importance of graphing data before analysing.
+These plots are a variant of plots known as *Anscombe plots*, after the statistician *Francis Anscombe*, demonstrating the importance of graphing data before analysing.
 
 
 ```{r plot, echo=FALSE, fig.width=7, fig.height=5}

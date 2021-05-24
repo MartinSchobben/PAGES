@@ -5,6 +5,7 @@ vignette: >
   %\VignetteIndexEntry{wrangle}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+bibliography: ["packages.bib", "PAGES.bib"]    
 ---
 
 ```{r, include = FALSE}
@@ -21,11 +22,15 @@ library(PAGES)
 
 # Tidyverse packages
 
-In this last exercise I show some functionality of the `tidyr` [@tidyr] package. From the website:
+In this last exercise I show some functionality of the `tidyr` [@tidyr] package. 
+
 
 ```{r extra}
 library(tidyr)
 ```
+
+
+From the website:
 
 "The goal of tidyr is to help you create tidy data. Tidy data is data where:
 
@@ -35,33 +40,41 @@ library(tidyr)
 
 Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse."
 
-```{r tidy, echo=FALSE, out.width="40%"}
+This looks like this:
+
+```{r tidy, echo=FALSE, out.width="70%", fig.cap= "obs = observation, var = variable and val = value"}
 knitr::include_graphics("figures/tidy.png")
 ```
-
+ 
+ 
 ## Kuhjoch wide format
 
-The following format of the data frame (or `tibble` in the tidyverse universe) is one that we are used to in publication. Here count data of all different elements each occupy their own column (i.e., variable).
+The following format of the data frame (or `tibble` [@tibble] in the tidyverse universe) is a format that we are used to see in publications. Here count data of all different elements each occupy their own column (i.e., variable).
+
 
 ```{r wide, echo=FALSE}
 head(kuhjoch)
 ```
 
 
+However, we can also describe this data in a long format, as the class of the values in the cells for the palynomorphs are all the same (i.e., they are all integer count data). So, how can we make a long format data frame out of this?
 
-However, we can also describe this data in a long format as the class of the values in the cells for the palynomorphs are all the same (i.e., all integer count data). So how can we make a long format data frame out of this.
 
 ## Kuhjoch long format
 
-We can use the `tidyr` [@tidyr] function `pivot_longer()` to recast this data.
 
-```{r pivot, echo=FALSE, out.width="40%"}
+For such operations, we can use the `tidyr` [@tidyr] function `pivot_longer()`.
+
+
+```{r pivot, echo=FALSE, out.width="70%"}
 knitr::include_graphics("figures/pivot.png")
 ```
 
-However, the question is a bit of trick question, as the variable names also contain information. Actually there are variable contained in the column. In this case the part before the subscript `_` is a categorical variable dividing the the `label` again in two subsets; `"landplant"`; describing whether the variable `label` describe a characteristic of land plant community composition (either pollen or spores), and `"environment"`; describing whether the variable `label` describe a characteristic of the environment (is the palynomorph and aquatic or terrestrial component?).
 
-To achieve the previous describe transformation to a long format and the extraction of the information in the column names, we construc the following call.
+However, the question is a bit of trick question, as the variable names also contains information. Actually, there are additional variables stashed in the column names. In this case, the word in the variable name before the subscript `_` is another categorical variable dividing the the `label` in two subsets; `"landplant"`; denoting whether the variable `label` describes a characteristic of land plant community composition (either pollen or spores), and `"environment"`; denoting whether the variable `label` describes a characteristic of the environment (i.e., is the palynomorph an aquatic or terrestrial component?).
+
+To achieve the previous describe transformation to a long format data frame, and the extraction of the information in the column names, we construct the following call.
+
 
 ```{r long}
 # long format
@@ -74,4 +87,7 @@ pivot_longer(
   )
 ```
 
-Note that in this call we select column with `-Height`, so we take everyhting except the height variable. Also note the vector of two elements for the `names_to` argument to define the two categorical columns and `name_sep` which controls how the original column names are split (e.g., `"_"`).
+
+Note that in this call we select column with `-Height`, so we take everything except the height variable. Also note that the vector of two elements for the `names_to` argument defines the two new categorical columns and `name_sep` controls how the original column names are split (`"_"`).
+
+# References

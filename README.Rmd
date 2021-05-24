@@ -76,6 +76,7 @@ knitr::include_graphics("man/figures/cover.png")
 
 The construction of the R [@rversion] package *PAGES* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr; @knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown; @rmarkdown2018; @rmarkdown2020] and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *stringr* [@stringr], *readr* [@readr], *magrittr* [@magrittr], and *readr* [@readr]. Plots are made with *ggplot2* [@ggplot2; @ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
 
+The package *marelac* [@marelac] is used for chemical data and transformations, and the package *datasauRus* [@datasauRus] is used as an example for the strength of plotting data.
 
 ## Installation
 

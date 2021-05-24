@@ -44,6 +44,11 @@ Hester 2020). Plots are made with *ggplot2* (Wickham, Chang, et al.
 2020; Wickham 2016) and *thematic* (Sievert, Schloerke, and Cheng 2021)
 is used for a consistent design in the presentation.
 
+The package *marelac* (Soetaert and Petzoldt 2020) is used for chemical
+data and transformations, and the package *datasauRus* (Locke and
+D’Agostino McGowan 2018) is used as an example for the strength of
+plotting data.
+
 ## Installation
 
 You can install the released version of PAGES from
@@ -156,6 +161,14 @@ Forward-Pipe Operator for r*.
 
 </div>
 
+<div id="ref-datasauRus" class="csl-entry">
+
+Locke, Steph, and Lucy D’Agostino McGowan. 2018. *datasauRus: Datasets
+from the Datasaurus Dozen*.
+<https://CRAN.R-project.org/package=datasauRus>.
+
+</div>
+
 <div id="ref-tibble" class="csl-entry">
 
 Müller, Kirill, and Hadley Wickham. 2021. *Tibble: Simple Data Frames*.
@@ -188,6 +201,13 @@ seas</span>.” *Newsletters on Stratigraphy* 52 (4): 461–86.
 Sievert, Carson, Barret Schloerke, and Joe Cheng. 2021. *Thematic:
 Unified and Automatic Theming of Ggplot2, Lattice, and Base r Graphics*.
 <https://CRAN.R-project.org/package=thematic>.
+
+</div>
+
+<div id="ref-marelac" class="csl-entry">
+
+Soetaert, Karline, and Thomas Petzoldt. 2020. *Marelac: Tools for
+Aquatic Sciences*. <https://CRAN.R-project.org/package=marelac>.
 
 </div>
 

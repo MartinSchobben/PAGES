@@ -96,9 +96,10 @@
 <div id="tidyverse-packages" class="section level1">
 <h1 class="hasAnchor">
 <a href="#tidyverse-packages" class="anchor"></a>Tidyverse packages</h1>
-<p>In this last exercise I show some functionality of the <code>tidyr</code> <span class="citation">[@tidyr]</span> package. From the website:</p>
+<p>In this last exercise I show some functionality of the <code>tidyr</code> <span class="citation">(Wickham 2021)</span> package.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></code></pre></div>
+<p>From the website:</p>
 <p>"The goal of tidyr is to help you create tidy data. Tidy data is data where:</p>
 <ul>
 <li>Every column is variable.</li>
@@ -106,11 +107,16 @@
 <li>Every cell is a single value.</li>
 </ul>
 <p>Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse."</p>
-<p><img src="figures/tidy.png" width="40%"></p>
+<p>This looks like this:</p>
+<div class="figure">
+<img src="figures/tidy.png" alt="obs = observation, var = variable and val = value" width="70%"><p class="caption">
+obs = observation, var = variable and val = value
+</p>
+</div>
 <div id="kuhjoch-wide-format" class="section level2">
 <h2 class="hasAnchor">
 <a href="#kuhjoch-wide-format" class="anchor"></a>Kuhjoch wide format</h2>
-<p>The following format of the data frame (or <code>tibble</code> in the tidyverse universe) is one that we are used to in publication. Here count data of all different elements each occupy their own column (i.e., variable).</p>
+<p>The following format of the data frame (or <code>tibble</code> <span class="citation">(Müller and Wickham 2021)</span> in the tidyverse universe) is a format that we are used to see in publications. Here count data of all different elements each occupy their own column (i.e., variable).</p>
 <pre><code>#&gt; # A tibble: 6 x 5
 #&gt;   Height landplant_pollen landplant_spores environment_aquat… environment_terre…
 #&gt;    &lt;dbl&gt;            &lt;int&gt;            &lt;int&gt;              &lt;int&gt;              &lt;int&gt;
@@ -120,15 +126,15 @@
 #&gt; 4   1045               24              276                 44                300
 #&gt; 5    965               29              276                 75                305
 #&gt; 6    885               19              284                 70                303</code></pre>
-<p>However, we can also describe this data in a long format as the class of the values in the cells for the palynomorphs are all the same (i.e., all integer count data). So how can we make a long format data frame out of this.</p>
+<p>However, we can also describe this data in a long format, as the class of the values in the cells for the palynomorphs are all the same (i.e., they are all integer count data). So, how can we make a long format data frame out of this?</p>
 </div>
 <div id="kuhjoch-long-format" class="section level2">
 <h2 class="hasAnchor">
 <a href="#kuhjoch-long-format" class="anchor"></a>Kuhjoch long format</h2>
-<p>We can use the <code>tidyr</code> <span class="citation">[@tidyr]</span> function <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> to recast this data.</p>
-<p><img src="figures/pivot.png" width="40%"></p>
-<p>However, the question is a bit of trick question, as the variable names also contain information. Actually there are variable contained in the column. In this case the part before the subscript <code>_</code> is a categorical variable dividing the the <code>label</code> again in two subsets; <code>"landplant"</code>; describing whether the variable <code>label</code> describe a characteristic of land plant community composition (either pollen or spores), and <code>"environment"</code>; describing whether the variable <code>label</code> describe a characteristic of the environment (is the palynomorph and aquatic or terrestrial component?).</p>
-<p>To achieve the previous describe transformation to a long format and the extraction of the information in the column names, we construc the following call.</p>
+<p>For such operations, we can use the <code>tidyr</code> <span class="citation">(Wickham 2021)</span> function <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>.</p>
+<p><img src="figures/pivot.png" width="70%"></p>
+<p>However, the question is a bit of trick question, as the variable names also contains information. Actually, there are additional variables stashed in the column names. In this case, the word in the variable name before the subscript <code>_</code> is another categorical variable dividing the the <code>label</code> in two subsets; <code>"landplant"</code>; denoting whether the variable <code>label</code> describes a characteristic of land plant community composition (either pollen or spores), and <code>"environment"</code>; denoting whether the variable <code>label</code> describes a characteristic of the environment (i.e., is the palynomorph an aquatic or terrestrial component?).</p>
+<p>To achieve the previous describe transformation to a long format data frame, and the extraction of the information in the column names, we construct the following call.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># long format</span>
 <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>
@@ -152,7 +158,19 @@
 <span class="co">#&gt;  9   1125 landplant   pollen         22</span>
 <span class="co">#&gt; 10   1125 landplant   spores        282</span>
 <span class="co">#&gt; # … with 170 more rows</span></code></pre></div>
-<p>Note that in this call we select column with <code>-Height</code>, so we take everyhting except the height variable. Also note the vector of two elements for the <code>names_to</code> argument to define the two categorical columns and <code>name_sep</code> which controls how the original column names are split (e.g., <code>"_"</code>).</p>
+<p>Note that in this call we select column with <code>-Height</code>, so we take everything except the height variable. Also note that the vector of two elements for the <code>names_to</code> argument defines the two new categorical columns and <code>name_sep</code> controls how the original column names are split (<code>"_"</code>).</p>
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-tibble" class="csl-entry">
+Müller, Kirill, and Hadley Wickham. 2021. <em>Tibble: Simple Data Frames</em>. <a href="https://CRAN.R-project.org/package=tibble">https://CRAN.R-project.org/package=tibble</a>.
+</div>
+<div id="ref-tidyr" class="csl-entry">
+Wickham, Hadley. 2021. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
+</div>
 </div>
 </div>
   </div>

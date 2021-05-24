@@ -105,12 +105,12 @@
 <div id="data" class="section level1">
 <h1 class="hasAnchor">
 <a href="#data" class="anchor"></a>Data</h1>
-<p>The dataset <code>datasaurus_dozen</code> of the <code>datasauRus</code> <span class="citation">(Locke and D’Agostino McGowan 2018)</span> package consists of one categorical variable <code>dataset</code> representing subsets of the data, which, in turn, all contain an <code>x</code> and <code>y</code> variable.</p>
+<p>The <code>datasaurus_dozen</code> dataset of the <code>datasauRus</code> <span class="citation">(Locke and D’Agostino McGowan 2018)</span> package consists of one categorical variable <code>dataset</code> representing subsets of the data, which, in turn, all contain an <code>x</code> and <code>y</code> variable.</p>
 </div>
 <div id="model-datasaurus" class="section level1">
 <h1 class="hasAnchor">
 <a href="#model-datasaurus" class="anchor"></a>Model datasauRus</h1>
-<p>First, we will model all datasets with a conventional least square linear regression with <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> and setting the argument <code>method</code> to `“lm.” We see then that all</p>
+<p>First, we will model all datasets with a conventional least square linear regression with <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> and by setting the argument <code>method</code> to <code>"lm"</code>. We see then that all subsets can be fitted with more-or-less similar models.</p>
 <pre><code>#&gt; `geom_smooth()` using formula 'y ~ x'</code></pre>
 <p><img src="model_files/figure-html/model-1.png" width="672"></p>
 <p>The <code><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_classic()</a></code> functions in this construction dictate certain visual aspects of the plots. They are of no further relevance.</p>
@@ -118,7 +118,7 @@
 <div id="visualize-datasaurus" class="section level1">
 <h1 class="hasAnchor">
 <a href="#visualize-datasaurus" class="anchor"></a>Visualize datasauRus</h1>
-<p>These plot are a variant of plots known as <em>Anscombe plots</em>, after the statistician <em>Francis Anscombe</em>, demonstrating the importance of graphing data before analysing.</p>
+<p>These plots are a variant of plots known as <em>Anscombe plots</em>, after the statistician <em>Francis Anscombe</em>, demonstrating the importance of graphing data before analysing.</p>
 <p><img src="model_files/figure-html/plot-1.png" width="672"></p>
 </div>
 <div id="reference" class="section level1 unnumbered">
