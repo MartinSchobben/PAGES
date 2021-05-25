@@ -5,11 +5,11 @@
 #'
 #' @format A data frame with 81 rows and 12 variables:
 #' \describe{
-#'   \item{Section}{Name of the section}
-#'   \item{Strat}{First order stratigraphic units}
-#'   \item{Strat2}{Second order stratigraphic units}
-#'   \item{SampleID}{Assigned IDs}
-#'   \item{Height}{Height in units cm}
+#'   \item{section}{Name of the section}
+#'   \item{strat}{First order stratigraphic units}
+#'   \item{strat2}{Second order stratigraphic units}
+#'   \item{sampleid}{Assigned IDs}
+#'   \item{height}{Height in units cm}
 #'   \item{CaCO3}{Calcium carbonate content in units weight percent of rock}
 #'   \item{TN}{Total nitrogen in units weight percent of rock}
 #'   \item{del13Ctoc}{Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite}

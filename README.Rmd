@@ -148,7 +148,7 @@ Besides wide format data the similarly named datasets with the suffix `_long` ar
 
 ```{r strat, fig.height=4, fig.width=8, fig.cap="Bonenburg geochemical data traversing the Triassic-Jurassic boundary."}
 ggplot(data = bonenburg_long) +
-  geom_point(mapping = aes(x = value, y = Height)) +
+  geom_point(mapping = aes(x = value, y = height)) +
   facet_grid(cols = vars(measurement), scales = "free_x") +
   theme_classic()
 ```

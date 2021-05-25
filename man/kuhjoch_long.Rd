@@ -7,7 +7,7 @@
 \format{
 A data frame with 180 rows and 4 variables:
 \describe{
-\item{Height}{Height in units cm}
+\item{height}{Height in units cm}
 \item{type}{Characteristic of palynomorph assemblage type}
 \item{label}{Type of palynomorph assemblage}
 \item{count}{Count}

@@ -119,7 +119,7 @@ The lazy load datasets are provided in a tidy format. Look-up directory
 ``` r
 head(bonenburg)
 #> # A tibble: 6 x 11
-#>   Section Strat Strat2 SampleID Height CaCO3    TN del13Ctoc TOCcfb  Na_Al  K_Al
+#>   section strat strat2 sampleid height CaCO3    TN del13Ctoc TOCcfb  Na_Al  K_Al
 #>   <chr>   <chr> <chr>     <dbl>  <dbl> <dbl> <dbl>     <dbl>  <dbl>  <dbl> <dbl>
 #> 1 Bonenb… Cont… Pre-e…        0   3.01 13.3   0.06     -27.5   1.16 0.0314 0.216
 #> 2 Bonenb… Cont… Pre-e…      100   3.95  3.84  0.07     -27.3   0.96 0.0250 0.211
@@ -135,7 +135,7 @@ plots for initial data exploration.
 
 ``` r
 ggplot(data = bonenburg_long) +
-  geom_point(mapping = aes(x = value, y = Height)) +
+  geom_point(mapping = aes(x = value, y = height)) +
   facet_grid(cols = vars(measurement), scales = "free_x") +
   theme_classic()
 ```

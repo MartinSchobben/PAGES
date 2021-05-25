@@ -82,7 +82,7 @@ To achieve the previous describe transformation to a long format data frame, and
 # long format
 pivot_longer(
   data = kuhjoch, 
-  cols = -Height,  
+  cols = -height,  
   names_to = c("type", "label"),
   values_to = "count",
   names_sep = "_"

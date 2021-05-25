@@ -3,13 +3,17 @@
 # geochemistry with 108 observations
 bonenburg_tidy <- dplyr::select(bonenburg_raw, -Reference) %>%
   dplyr::rename_with(
+    ~stringr::str_to_lower(.x),
+    c(Height, Section, Strat, Strat2, SampleID)
+    ) %>%
+  dplyr::rename_with(
     ~stringr::str_replace(.x, " \\(%\\)", "_pc"),
     contains("%")
     ) %>%
   tidyr::drop_na()
 
 # reorder variables
-bonenburg_tidy <- dplyr::relocate(bonenburg_tidy, c(Section, Strat, Strat2))
+bonenburg_tidy <- dplyr::relocate(bonenburg_tidy, c(section, strat, strat2))
 
 usethis::use_data(bonenburg_tidy, overwrite = TRUE)
 file.remove("data/bonenburg_raw.rda")
@@ -27,14 +31,14 @@ aquatic_nm <- aquatic_nm[aquatic_nm != "Dino contamination"]
 
 kuhjoch <- dplyr::rowwise(kuhjoch) %>%
   dplyr::transmute(
-   Height = Height,
+   height = Height,
    landplant_pollen = sum(dplyr::c_across(any_of(pollen_nm)), na.rm = TRUE),
    landplant_spores = sum(dplyr::c_across(any_of(spores_nm)), na.rm = TRUE),
    environment_aquatic = sum(dplyr::c_across(any_of(aquatic_nm)), na.rm = TRUE)
    ) %>%
   dplyr::mutate(
     environment_terrestrial = landplant_pollen + landplant_spores,
-    dplyr::across(-Height, as.integer)
+    dplyr::across(-height, as.integer)
     ) %>%
   dplyr::ungroup()
 
@@ -43,7 +47,7 @@ usethis::use_data(kuhjoch, overwrite = TRUE)
 # long format
 kuhjoch_long <- tidyr::pivot_longer(
   kuhjoch,
-  -Height,
+  -height,
   names_to = c("type", "label"),
   values_to = "count",
   names_sep = "_"

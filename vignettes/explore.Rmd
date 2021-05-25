@@ -56,7 +56,7 @@ You will notice that I use a long format version of the Kuhjoch dataset (`kuhjoc
 First, I split the dataset into two types of analyses with `facet_grid()` and the categorical value `type` supplied to the argument `cols` with the function `vars()`. Furthermore, I supply `"y"` to the argument `orientation` of `geom_area()` to ensure the correct direction of the lines drawn, which follows stratigraphic height. I keep the argument `position` first on the default setting `"identity"`.
 
 ```{r aboslute, fig.width=7}
-ggplot(data = kuhjoch_long, mapping = aes(x = count, y = Height,  fill = label)) + 
+ggplot(data = kuhjoch_long, mapping = aes(x = count, y = height,  fill = label)) + 
   geom_area(position = "identity", orientation = "y") +
   facet_grid(cols = vars(type))
 ```
@@ -71,7 +71,7 @@ The position adjustment `"fill"` applies a transformation to the position of the
 
 
 ```{r fill, fig.width=7}
-ggplot(data = kuhjoch_long, mapping = aes(x = count, y = Height,  fill = label)) + 
+ggplot(data = kuhjoch_long, mapping = aes(x = count, y = height,  fill = label)) + 
   geom_area(position = "fill", orientation = "y") +
   facet_grid(cols = vars(type))
 ```
@@ -83,9 +83,9 @@ To exemplify what happens internally in the previous `ggplot2` call, we can do t
 
 
 ```{r manual, fig.width=7}
-group_by(kuhjoch_long, Height, type) %>% 
+group_by(kuhjoch_long, height, type) %>% 
   mutate(count = count / sum(count)) %>% 
-  ggplot(mapping = aes(x = count, y = Height,  fill = label)) + 
+  ggplot(mapping = aes(x = count, y = height,  fill = label)) + 
     geom_area(orientation = "y") +
     facet_grid(cols = vars(type))
 ```

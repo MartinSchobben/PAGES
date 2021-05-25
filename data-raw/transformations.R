@@ -19,7 +19,7 @@ usethis::use_data(bonenburg, overwrite = TRUE)
 # long format for stratigraphic plots
 bonenburg_long <- tidyr::pivot_longer(
   bonenburg,
-  -c(Section, Strat, Strat2, SampleID, Height),
+  -c(section, strat, strat2, sampleid, height),
   names_to = "measurement"
   )
 # save
@@ -28,8 +28,8 @@ usethis::use_data(bonenburg_long, overwrite = TRUE)
 # crossed format for stratigraphic plots
 bonenburg_cross <- tidyr::pivot_longer(
   bonenburg,
-  -c(Section, Strat, Strat2, SampleID, del13Ctoc),
+  -c(section, strat, strat2, sampleid, del13Ctoc),
   names_to = "measurement"
-)
+  )
 # save
 usethis::use_data(bonenburg_cross, overwrite = TRUE)

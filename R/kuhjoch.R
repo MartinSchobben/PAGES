@@ -4,7 +4,7 @@
 #'
 #' @format A data frame with 45 rows and 5 variables:
 #' \describe{
-#'   \item{Height}{Height in units cm}
+#'   \item{height}{Height in units cm}
 #'   \item{landplant_pollen}{Count}
 #'   \item{landplant_spores}{Count}
 #'   \item{environment_aquatic}{Count}

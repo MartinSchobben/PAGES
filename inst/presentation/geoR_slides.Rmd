@@ -312,7 +312,7 @@ Scatterplot: maps each observation to a **horizontal** and **vertical** position
 
 ```{r aes}
 ggplot(data = bonenburg) +
-  geom_point(mapping = aes(x = del13Ctoc, y = Height)) 
+  geom_point(mapping = aes(x = del13Ctoc, y = height)) 
 ```
 
 
@@ -341,7 +341,7 @@ The colour, shape and linetype can also be used to map additional variables. Her
 
 ```{r color, fig.width=5}
 ggplot(data = bonenburg) +
-  geom_point(mapping = aes(x = del13Ctoc, y = Height, colour = Strat))
+  geom_point(mapping = aes(x = del13Ctoc, y = height, colour = strat))
 ```
 
 
@@ -406,7 +406,7 @@ Hence I will use a boxplot to compare several distributions.
 
 ```{r cov, fig.width=5}
 ggplot(data = bonenburg) + 
-  geom_boxplot(mapping = aes(y = Strat, x = del13Ctoc), stat = "boxplot")
+  geom_boxplot(mapping = aes(y = strat, x = del13Ctoc), stat = "boxplot")
 ```
 
 
@@ -420,7 +420,7 @@ The geom geom_boxplot does a statistical transformation of the continuous variab
 
 ```{r ordered, fig.width=5}
 ggplot(data = bonenburg) +
-  geom_boxplot(mapping = aes(y = reorder(Strat, Height), x = del13Ctoc))
+  geom_boxplot(mapping = aes(y = reorder(strat, height), x = del13Ctoc))
 ```
 
 <div class="notes">
@@ -436,7 +436,7 @@ The facets splits data according to a categorical variable.
 
 ```{r strat, fig.width=10}
 ggplot(data = bonenburg_long) +
-  geom_point(mapping = aes(x = value, y = Height)) +
+  geom_point(mapping = aes(x = value, y = height)) +
   facet_grid(cols = vars(measurement), scales = "free_x") 
 ```
 
@@ -476,7 +476,7 @@ knitr::include_graphics("figures/data-science-model.png")
 
 ```{r cross1, fig.width=9, fig.height=4, message=FALSE}
 ggplot(data = bonenburg_cross, mapping = aes(x = value, y = del13Ctoc)) +
-  geom_point(aes(colour = Strat)) +
+  geom_point(aes(colour = strat)) +
   facet_wrap(facets = vars(measurement), scales = "free") 
 ```
 
@@ -486,7 +486,7 @@ ggplot(data = bonenburg_cross, mapping = aes(x = value, y = del13Ctoc)) +
 
 ```{r cross2, fig.width=9, fig.height=4, message=FALSE}
 ggplot(data = bonenburg_cross, mapping = aes(x = value, y = del13Ctoc)) +
-  geom_point(aes(colour = Strat)) +
+  geom_point(aes(colour = strat)) +
   geom_smooth() +
   facet_wrap(facets = vars(measurement), scales = "free") 
 ```
@@ -526,7 +526,7 @@ library(modelr)
 mod <- lm(del13Ctoc ~ log(TOCcfb), data = bonenburg)
 
 ggplot(data =  add_residuals(bonenburg, mod)) +
-  geom_point(mapping = aes(x = K_Al, y = resid, color = Strat))
+  geom_point(mapping = aes(x = K_Al, y = resid, color = strat))
 ```
 
 

@@ -20,6 +20,7 @@ Imports:
     datasauRus (>= 0.1.4),
     dplyr (>= 1.0.6),
     ggplot2 (>= 3.3.3),
+    magrittr,
     knitr (>= 1.33),
     marelac (>= 2.1.10),
     modelr (>= 0.1.8),
