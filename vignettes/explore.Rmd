@@ -86,8 +86,8 @@ To exemplify what happens internally in the previous `ggplot2` call, we can do t
 group_by(kuhjoch_long, Height, type) %>% 
   mutate(count = count / sum(count)) %>% 
   ggplot(mapping = aes(x = count, y = Height,  fill = label)) + 
-  geom_area(orientation = "y") +
-  facet_grid(cols = vars(type))
+    geom_area(orientation = "y") +
+    facet_grid(cols = vars(type))
 ```
 
 
