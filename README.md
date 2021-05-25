@@ -35,14 +35,14 @@ The construction of the R (R Core Team 2021) package *PAGES* and
 associated documentation was aided by the packages; *devtools* (Wickham,
 Hester, and Chang 2021), *roxygen2* (Wickham, Danenberg, et al. 2020),
 *knitr* (Xie 2021, 2014, 2015), *rmarkdown* (Allaire et al. 2021; Xie,
-Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020) and the
-superb guidance in the book: *R packages: organize, test, document, and
-share your code*, by Wickham (2015). In addition, this package relies on
-a set of external packages from the tidyverse universe, including:
-*dplyr* (Wickham et al. 2021), *tidyr* (Wickham 2021), *tibble* (Müller
-and Wickham 2021), *stringr* (Wickham 2019), *readr* (Wickham and Hester
-2020), *magrittr* (Bache and Wickham 2020), and *readr* (Wickham and
-Hester 2020). Plots are made with *ggplot2* (Wickham, Chang, et al.
+Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020), *bibtex*
+(Francois 2020), and the superb guidance in the book: *R packages:
+organize, test, document, and share your code*, by Wickham (2015). In
+addition, this package relies on a set of external packages from the
+tidyverse universe, including: *dplyr* (Wickham et al. 2021), *tidyr*
+(Wickham 2021), *tibble* (Müller and Wickham 2021), *readr* (Wickham and
+Hester 2020), *magrittr* (Bache and Wickham 2020), and *readr* (Wickham
+and Hester 2020). Plots are made with *ggplot2* (Wickham, Chang, et al.
 2020; Wickham 2016) and *thematic* (Sievert, Schloerke, and Cheng 2021)
 is used for a consistent design in the presentation.
 
@@ -164,6 +164,13 @@ Forward-Pipe Operator for r*.
 
 </div>
 
+<div id="ref-bibtex" class="csl-entry">
+
+Francois, Romain. 2020. *Bibtex: Bibtex Parser*.
+<https://github.com/romainfrancois/bibtex>.
+
+</div>
+
 <div id="ref-datasauRus" class="csl-entry">
 
 Locke, Steph, and Lucy D’Agostino McGowan. 2018. *datasauRus: Datasets
@@ -225,13 +232,6 @@ Your Code*. O’Reilly Media, Inc. <https://r-pkgs.org/>.
 
 ———. 2016. *Ggplot2: Elegant Graphics for Data Analysis*.
 Springer-Verlag New York. <https://ggplot2.tidyverse.org>.
-
-</div>
-
-<div id="ref-stringr" class="csl-entry">
-
-———. 2019. *Stringr: Simple, Consistent Wrappers for Common String
-Operations*. <https://CRAN.R-project.org/package=stringr>.
 
 </div>
 

@@ -25,9 +25,8 @@ The package PAGES is the supportive material of a webinar designed for the [PAGE
 
 ```{r pkgs, echo=FALSE, message=FALSE}
 # following code for loading and writing the bibtex references for the used pkgs
-pkgs <- c("dplyr", "tidyr", "tibble", "stringr", "readr", "magrittr",
-          "ggplot2", "purrr", "devtools", 
-          "roxygen2", "knitr", "rmarkdown",
+pkgs <- c("dplyr", "tidyr", "tibble", "readr", "magrittr", "ggplot2", 
+          "devtools", "roxygen2", "knitr", "rmarkdown", "bibtex",
           "marelac", "datasauRus", "thematic")    
 # load
 invisible(mapply(library, pkgs, character.only = TRUE))
@@ -76,7 +75,7 @@ knitr::include_graphics("man/figures/cover.png")
 
 ## Credits
 
-The construction of the R [@rversion] package *PAGES* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr; @knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown; @rmarkdown2018; @rmarkdown2020] and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *stringr* [@stringr], *readr* [@readr], *magrittr* [@magrittr], and *readr* [@readr]. Plots are made with *ggplot2* [@ggplot2; @ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
+The construction of the R [@rversion] package *PAGES* and associated documentation was aided by the packages; *devtools* [@devtools], *roxygen2* [@roxygen2], *knitr* [@knitr; @knitr2014 ; @knitr2015], *rmarkdown* [@rmarkdown; @rmarkdown2018; @rmarkdown2020], *bibtex* [@bibtex], and the superb guidance in the book: *R packages: organize, test, document, and share your code*, by @Wickham2015. In addition, this package relies on a set of external packages from the tidyverse universe, including: *dplyr* [@dplyr], *tidyr* [@tidyr], *tibble* [@tibble], *readr* [@readr], *magrittr* [@magrittr], and *readr* [@readr]. Plots are made with *ggplot2* [@ggplot2; @ggplot22016] and *thematic* [@thematic] is used for a consistent design in the presentation.
 
 The package *marelac* [@marelac] is used for chemical data and transformations, and the package *datasauRus* [@datasauRus] is used as an example for the strength of plotting data.
 
