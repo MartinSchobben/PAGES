@@ -8,8 +8,8 @@
 [![DOI](https://zenodo.org/badge/370009359.svg)](https://zenodo.org/badge/latestdoi/370009359)
 <!-- badges: end -->
 
-The package PAGES was designed as supportive material for a webinar
-designed for the [PAGES Early-Career Network
+The package PAGES is the supportive material of a webinar designed for
+the [PAGES Early-Career Network
 (ECN)](http://pastglobalchanges.org/ecn/intro). The goal is to give some
 useful pointers to explore geological data, in particular stratigraphic
 occurrences, and uses RStudio and packages from the [tidyverse
