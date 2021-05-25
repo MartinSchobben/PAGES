@@ -58,7 +58,7 @@ The `theme()` and `theme_classic()` functions in this construction dictate certa
 
 # Visualize datasauRus
 
-These plots are a variant of plots known as *Anscombe plots*, after the statistician *Francis Anscombe*, demonstrating the importance of graphing data before analysing.
+These plots are a variant of plots known as *Anscombe plots*, after the statistician [*Francis Anscombe*](https://en.wikipedia.org/wiki/Frank_Anscombe), demonstrating the importance of graphing data before analysing it.
 
 
 ```{r plot, fig.width=7, fig.height=7}

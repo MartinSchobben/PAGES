@@ -93,7 +93,7 @@ Keep back-ups of the raw data directories as a minimum, but preferably the whole
 
 Experienced users will use version control, such as Git and Github, to keep track of the changes in their scripts over time. The RStudio Project also integrate this option in its interface.
 
-This is my github front-page, where I have several repositories containing as a remote back-up of my scripts and the complete history of revisions through Git version control.
+This is my github front-page, where I have several repositories containing a remote back-up of my scripts and the complete history of revisions through Git version control.
 
 
 ```{r out.width="80%", echo=FALSE}
