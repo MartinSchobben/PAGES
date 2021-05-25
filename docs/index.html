@@ -102,7 +102,7 @@ Book cover (Wickham and Grolemund 2016)
 <div id="credits" class="section level2">
 <h2 class="hasAnchor">
 <a href="#credits" class="anchor"></a>Credits</h2>
-<p>The construction of the R (R Core Team 2021) package <em>PAGES</em> and associated documentation was aided by the packages; <em>devtools</em> (Wickham, Hester, and Chang 2021), <em>roxygen2</em> (Wickham, Danenberg, et al. 2020), <em>knitr</em> (Xie 2021, 2014, 2015), <em>rmarkdown</em> (Allaire et al. 2021; Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020) and the superb guidance in the book: <em>R packages: organize, test, document, and share your code</em>, by Wickham (2015). In addition, this package relies on a set of external packages from the tidyverse universe, including: <em>dplyr</em> (Wickham et al. 2021), <em>tidyr</em> (Wickham 2021), <em>tibble</em> (Müller and Wickham 2021), <em>stringr</em> (Wickham 2019), <em>readr</em> (Wickham and Hester 2020), <em>magrittr</em> (Bache and Wickham 2020), and <em>readr</em> (Wickham and Hester 2020). Plots are made with <em>ggplot2</em> (Wickham, Chang, et al. 2020; Wickham 2016) and <em>thematic</em> (Sievert, Schloerke, and Cheng 2021) is used for a consistent design in the presentation.</p>
+<p>The construction of the R (R Core Team 2021) package <em>PAGES</em> and associated documentation was aided by the packages; <em>devtools</em> (Wickham, Hester, and Chang 2021), <em>roxygen2</em> (Wickham, Danenberg, et al. 2020), <em>knitr</em> (Xie 2021, 2014, 2015), <em>rmarkdown</em> (Allaire et al. 2021; Xie, Allaire, and Grolemund 2018; Xie, Dervieux, and Riederer 2020), <em>bibtex</em> (Francois 2020), and the superb guidance in the book: <em>R packages: organize, test, document, and share your code</em>, by Wickham (2015). In addition, this package relies on a set of external packages from the tidyverse universe, including: <em>dplyr</em> (Wickham et al. 2021), <em>tidyr</em> (Wickham 2021), <em>tibble</em> (Müller and Wickham 2021), <em>readr</em> (Wickham and Hester 2020), <em>magrittr</em> (Bache and Wickham 2020), and <em>readr</em> (Wickham and Hester 2020). Plots are made with <em>ggplot2</em> (Wickham, Chang, et al. 2020; Wickham 2016) and <em>thematic</em> (Sievert, Schloerke, and Cheng 2021) is used for a consistent design in the presentation.</p>
 <p>The package <em>marelac</em> (Soetaert and Petzoldt 2020) is used for chemical data and transformations, and the package <em>datasauRus</em> (Locke and D’Agostino McGowan 2018) is used as an example for the strength of plotting data.</p>
 </div>
 <div id="installation" class="section level2">
@@ -160,7 +160,7 @@ Book cover (Wickham and Grolemund 2016)
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">bonenburg</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 6 x 11</span>
-<span class="co">#&gt;   Section Strat Strat2 SampleID Height CaCO3    TN del13Ctoc TOCcfb  Na_Al  K_Al</span>
+<span class="co">#&gt;   section strat strat2 sampleid height CaCO3    TN del13Ctoc TOCcfb  Na_Al  K_Al</span>
 <span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 Bonenb… Cont… Pre-e…        0   3.01 13.3   0.06     -27.5   1.16 0.0314 0.216</span>
 <span class="co">#&gt; 2 Bonenb… Cont… Pre-e…      100   3.95  3.84  0.07     -27.3   0.96 0.0250 0.211</span>
@@ -170,9 +170,9 @@ Book cover (Wickham and Grolemund 2016)
 <span class="co">#&gt; 6 Bonenb… Cont… Pre-e…      275   5.68  9.91  0.06     -27     1.19 0.0201 0.251</span></code></pre></div>
 <p>Besides wide format data the similarly named datasets with the suffix <code>_long</code> are used to generate, for example, multi-proxy stratigraphic plots for initial data exploration.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">bonenburg_long</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">geom_point</span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">value</span>, y <span class="op">=</span> <span class="va">Height</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu">facet_grid</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu">vars</span><span class="op">(</span><span class="va">measurement</span><span class="op">)</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span> <span class="op">+</span>
+<code class="sourceCode R"><span class="fu"><a href="reference/ggplot2.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">bonenburg_long</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="reference/ggplot2.html">geom_point</a></span><span class="op">(</span>mapping <span class="op">=</span> <span class="fu"><a href="reference/ggplot2.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">value</span>, y <span class="op">=</span> <span class="va">height</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="reference/ggplot2.html">facet_grid</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="reference/ggplot2.html">vars</a></span><span class="op">(</span><span class="va">measurement</span><span class="op">)</span>, scales <span class="op">=</span> <span class="st">"free_x"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu">theme_classic</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-strat-1.png" alt="Bonenburg geochemical data traversing the Triassic-Jurassic boundary."></p>
 </div>
@@ -186,6 +186,9 @@ Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron A
 </div>
 <div id="ref-magrittr" class="csl-entry">
 Bache, Stefan Milton, and Hadley Wickham. 2020. <em>Magrittr: A Forward-Pipe Operator for r</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.
+</div>
+<div id="ref-bibtex" class="csl-entry">
+Francois, Romain. 2020. <em>Bibtex: Bibtex Parser</em>. <a href="https://github.com/romainfrancois/bibtex" class="uri">https://github.com/romainfrancois/bibtex</a>.
 </div>
 <div id="ref-datasauRus" class="csl-entry">
 Locke, Steph, and Lucy D’Agostino McGowan. 2018. <em>datasauRus: Datasets from the Datasaurus Dozen</em>. <a href="https://CRAN.R-project.org/package=datasauRus" class="uri">https://CRAN.R-project.org/package=datasauRus</a>.
@@ -210,9 +213,6 @@ Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your 
 </div>
 <div id="ref-ggplot22016" class="csl-entry">
 ———. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org" class="uri">https://ggplot2.tidyverse.org</a>.
-</div>
-<div id="ref-stringr" class="csl-entry">
-———. 2019. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.
 </div>
 <div id="ref-tidyr" class="csl-entry">
 ———. 2021. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.

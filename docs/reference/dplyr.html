@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bonenburg geochemical dataset long format — bonenburg_cross • PAGES</title>
+<title>dplyr functions used in PAGES seminar — dplyr • PAGES</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,17 @@
 
 
 
-<meta property="og:title" content="Bonenburg geochemical dataset long format — bonenburg_cross" />
-<meta property="og:description" content="This is the same dataset but now the continuous variables (e.g. measurements)
-are crossed with the variable del13Ctoc." />
+<meta property="og:title" content="dplyr functions used in PAGES seminar — dplyr" />
+<meta property="og:description" content="
+
+group_by() Converts a
+tibble to a grouped tibble where operations
+are performed group-wise.
+mutate() Transform a variable of a
+tibble
+
+
+To learn more about dplyr visit https://r4ds.had.co.nz/index.html." />
 
 
 
@@ -127,35 +135,26 @@ are crossed with the variable del13Ctoc." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Bonenburg geochemical dataset long format</h1>
+    <h1>dplyr functions used in PAGES seminar</h1>
     
-    <div class="hidden name"><code>bonenburg_cross.Rd</code></div>
+    <div class="hidden name"><code>dplyr.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This is the same dataset but now the continuous variables (e.g. measurements)
-are crossed with the variable del13Ctoc.</p>
+    
+<ul>
+<li><p><code><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a>()</code> Converts a
+<code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> to a grouped <code>tibble</code> where operations
+are performed group-wise.</p></li>
+<li><p><code><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a>()</code> Transform a variable of a
+<code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code></p></li>
+</ul>
+
+<p>To learn more about dplyr visit <a href='https://r4ds.had.co.nz/index.html'>https://r4ds.had.co.nz/index.html</a>.</p>
     </div>
 
-    <pre class="usage"><span class='va'>bonenburg_cross</span></pre>
 
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A data frame with 486 rows and 11 variables:</p><dl>
-<dt>section</dt><dd><p>Name of the section</p></dd>
-<dt>strat</dt><dd><p>First order stratigraphic units</p></dd>
-<dt>strat2</dt><dd><p>Second order stratigraphic units</p></dd>
-<dt>sampleid</dt><dd><p>Assigned IDs</p></dd>
-<dt>del13Ctoc</dt><dd><p>Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite</p></dd>
-<dt>measurement</dt><dd><p>Type of measurement</p></dd>
-<dt>value</dt><dd><p>Value of measurment</p></dd>
-
-</dl>
-
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>https://www.schweizerbart.de/papers/nos/detail/52/90527/A_comparative_study_of_total_organic_carbon_d13C_signatures_in_the_Triassic_Jurassic_transitional_beds_of_the_Central_European_Basin_and_western_Tethys_shelf_seas</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

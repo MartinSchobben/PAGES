@@ -120,7 +120,7 @@ obs = observation, var = variable and val = value
 <a href="#kuhjoch-wide-format" class="anchor"></a>Kuhjoch wide format</h2>
 <p>The following format of the data frame (or <code>tibble</code> <span class="citation">(Müller and Wickham 2021)</span> in the tidyverse universe) is a format that we are used to see in publications. Here count data of all different elements each occupy their own column (i.e., variable).</p>
 <pre><code>#&gt; # A tibble: 6 x 5
-#&gt;   Height landplant_pollen landplant_spores environment_aquat… environment_terre…
+#&gt;   height landplant_pollen landplant_spores environment_aquat… environment_terre…
 #&gt;    &lt;dbl&gt;            &lt;int&gt;            &lt;int&gt;              &lt;int&gt;              &lt;int&gt;
 #&gt; 1   1600               31              277                 65                308
 #&gt; 2   1365               27              262                114                289
@@ -133,21 +133,21 @@ obs = observation, var = variable and val = value
 <div id="kuhjoch-long-format" class="section level2">
 <h2 class="hasAnchor">
 <a href="#kuhjoch-long-format" class="anchor"></a>Kuhjoch long format</h2>
-<p>For such operations, we can use the <code>tidyr</code> <span class="citation">(Wickham 2021)</span> function <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>.</p>
+<p>For such operations, we can use the <code>tidyr</code> <span class="citation">(Wickham 2021)</span> function <code><a href="../reference/pivot_longer.html">pivot_longer()</a></code>.</p>
 <p><img src="figures/pivot.png" width="70%"></p>
 <p>However, the question is a bit of trick question, as the variable names also contains information. Actually, there are additional variables stashed in the column names. In this case, the word in the variable name before the subscript <code>_</code> is another categorical variable dividing the the <code>label</code> in two subsets; <code>"landplant"</code>; denoting whether the variable <code>label</code> describes a characteristic of land plant community composition (either pollen or spores), and <code>"environment"</code>; denoting whether the variable <code>label</code> describes a characteristic of the environment (i.e., is the palynomorph an aquatic or terrestrial component?).</p>
 <p>To achieve the previous describe transformation to a long format data frame, and the extraction of the information in the column names, we construct the following call.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># long format</span>
-<span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>
+<span class="fu"><a href="../reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>
   data <span class="op">=</span> <span class="va">kuhjoch</span>, 
-  cols <span class="op">=</span> <span class="op">-</span><span class="va">Height</span>,  
+  cols <span class="op">=</span> <span class="op">-</span><span class="va">height</span>,  
   names_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"type"</span>, <span class="st">"label"</span><span class="op">)</span>,
   values_to <span class="op">=</span> <span class="st">"count"</span>,
   names_sep <span class="op">=</span> <span class="st">"_"</span>
   <span class="op">)</span>
 <span class="co">#&gt; # A tibble: 180 x 4</span>
-<span class="co">#&gt;    Height type        label       count</span>
+<span class="co">#&gt;    height type        label       count</span>
 <span class="co">#&gt;     &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;       &lt;int&gt;</span>
 <span class="co">#&gt;  1   1600 landplant   pollen         31</span>
 <span class="co">#&gt;  2   1600 landplant   spores        277</span>
