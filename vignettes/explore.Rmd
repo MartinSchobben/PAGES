@@ -53,15 +53,15 @@ The following is listed in the manual for these arguments.
 
 You will notice that I use a long format version of the Kuhjoch dataset (`kuhjoch_long`). This is not the format that you are normally used to. I will later on explain the transformation needed to obtain this type of data from the customary wide format data frame. The values of the variable `count` are absolute counts of the micro-floral elements found under the microscope. In the exercise, I will transform this to relative counts.
 
-First, I split the dataset into two types of analyses with `facet_grid()` and the categorical value `type` supplied to the argument `cols` with the function `vars()`. Furthermore, I supply `"y"` to the argument `orientation` of `geom_area()` to ensure the correct direction of the lines drawn, which follows stratigraphic height. I keep the argument `position` first on the default setting `"identity"`.
+First, I split the dataset into two types of analyses with `facet_grid()` and the categorical value `type` supplied to the argument `cols` with the function `vars()`. Furthermore, I supply `"y"` to the argument `orientation` of `geom_area()` to ensure the correct direction of the lines drawn, which follows stratigraphic height. I keep the argument `position` first on the default setting `"stack"`.
 
 ```{r aboslute, fig.width=7}
 ggplot(data = kuhjoch_long, mapping = aes(x = count, y = height,  fill = label)) + 
-  geom_area(position = "identity", orientation = "y") +
+  geom_area(position = "stack", orientation = "y") +
   facet_grid(cols = vars(type))
 ```
 
-This produces a stratigraphic plot with absolute palynomorph counts and two overlapping areas. 
+This produces a stratigraphic plot with absolute palynomorph counts and two stacked areas. 
 
 ## Transformation and position
 
