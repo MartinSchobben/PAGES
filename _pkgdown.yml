@@ -20,8 +20,8 @@ articles:
 - title: "Exercises"
   navbar: "Exercises"
   contents:
-  - 1_project
-  - 2_explore
-  - 3_model
-  - 4_wrangle
+  - project
+  - explore
+  - model
+  - wrangle
 
