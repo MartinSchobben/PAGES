@@ -60,14 +60,9 @@ knitr::include_graphics("figures/datascience.png")
 4. Wrangling    
 
 **Each section:**    
-5-10 minutes of introduction    
-5-10 minutes of live coding and questions    
+5--10 minutes of introduction    
+5--10 minutes of live coding and questions    
 
-``` r
-# Install point from GitHub:
-# install.packages("devtools")
-devtools::install_github("MartinSchobben/PAGES")
-```
 
 ## PAGES R package
 
@@ -122,22 +117,22 @@ knitr::include_graphics("figures/tidyverse.png")
 <div class="notes">
 ggplot2: 
  - It is modular, so you can mix and combine components to get a unique solution to your unique data exploration queries
- - it automatically draws legends (scaling: a function and its inverse)
- - it has carefully selected default settings
- - it is iterative (explore step-by-step)
- - it can perform statistical transformations on the data
+ - It automatically draws legends (scaling: a function and its inverse)
+ - It has carefully selected default settings
+ - It is iterative (explore step-by-step)
+ - It can perform statistical transformations on the data
 dplyr:
- - manipulating the data
- - new variables
- - summaries
- - filter or reorder observations
+ - Manipulating the data
+ - New variables
+ - Summaries
+ - Filter or reorder observations
 readr:
- - read plain-text rectangular files into R
+ - Read plain-text rectangular files into R
 tidyr:
- - casting data into the tidyformat
+ - Casting data into the tidy format
 modelr:
- - tidy model solutions
- - Nowadays superseded by the separate pacakage collection.
+ - Tidy model solutions
+ - Nowadays superseded by the separate package collection.
 </div>
 
 
@@ -162,10 +157,10 @@ knitr::include_graphics("figures/bonenburg.png")
 
 </div>
 
----
-nocite: | 
-  @Schobben2019
-...
+<div class="notes">
+The bonenburg site has this nice divisions 3 clearly recognisable lithological units.
+</div>
+
 
 ## Data (geo)science project {.centered}
 
@@ -198,8 +193,11 @@ knitr::include_graphics("figures/rstudio-project-3.png")
 
 <div class="notes">
 At some point you are more interested in the script that generated your figure than that you are interested in the figure it self. Then it is time to collect your data science project in own distinct environment.
-
 No more need for absolute pathways, only relative pathways witht the project as the lowest directory
+
+Rstudio has many more benefits
+- auto-completion of code in scripts and console (with drop down menu)
+- panels with environment objects and istalled packages
 </div>
 
 
@@ -251,7 +249,7 @@ kuhjoch_mean <- group_by(kuhjoch, type) %>%
 
 # Break 1
 
-# Explore 
+# Exploratory data analyses 
 
 ## Exploratory data analyses {.centered}
 
@@ -320,6 +318,7 @@ ggplot(data = bonenburg) +
 
 <div class="notes">
 Variation: the tendency of values to change from measurement to measurement.
+An ad-hoc hypothesis is that del13C reflect on changes in the C cycle through time
 The aesthetics function maps your data to a visual property of the objects in your plot
 ggplot::aes() can be mapped to a variable or a constant
 We can now look at variation in del13C through time which we often tend to link to temporal change sin the carbon cycle.
@@ -437,7 +436,7 @@ The facets splits data according to a categorical variable.
 
 ```{r strat, fig.width=10}
 ggplot(data = bonenburg_long) +
-  geom_point(mapping = aes(x = value, y = Height), na.rm = TRUE) +
+  geom_point(mapping = aes(x = value, y = Height)) +
   facet_grid(cols = vars(measurement), scales = "free_x") 
 ```
 

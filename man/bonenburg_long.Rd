@@ -7,13 +7,13 @@
 \format{
 A data frame with 486 rows and 11 variables:
 \describe{
-  \item{Section}{Name of the section}
-  \item{Strat}{First order stratigraphic units}
-  \item{Strat2}{Second order stratigraphic units}
-  \item{SampleID}{Assigned IDs}
-  \item{Height}{Height in units cm}
-  \item{measurement}{Type of measurement}
-  \item{value}{Value of measurment}
+\item{Section}{Name of the section}
+\item{Strat}{First order stratigraphic units}
+\item{Strat2}{Second order stratigraphic units}
+\item{SampleID}{Assigned IDs}
+\item{Height}{Height in units cm}
+\item{measurement}{Type of measurement}
+\item{value}{Value of measurment}
 }
 }
 \source{

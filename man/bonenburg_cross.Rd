@@ -7,13 +7,13 @@
 \format{
 A data frame with 486 rows and 11 variables:
 \describe{
-  \item{Section}{Name of the section}
-  \item{Strat}{First order stratigraphic units}
-  \item{Strat2}{Second order stratigraphic units}
-  \item{SampleID}{Assigned IDs}
-  \item{del13Ctoc}{Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite}
-  \item{measurement}{Type of measurement}
-  \item{value}{Value of measurment}
+\item{Section}{Name of the section}
+\item{Strat}{First order stratigraphic units}
+\item{Strat2}{Second order stratigraphic units}
+\item{SampleID}{Assigned IDs}
+\item{del13Ctoc}{Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite}
+\item{measurement}{Type of measurement}
+\item{value}{Value of measurment}
 }
 }
 \source{

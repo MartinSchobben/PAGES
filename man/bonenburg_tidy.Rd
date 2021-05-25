@@ -7,18 +7,18 @@
 \format{
 A data frame with 81 rows and 12 variables:
 \describe{
-  \item{Section}{Name of the section}
-  \item{Strat}{First order stratigraphic units}
-  \item{Strat2}{Second order stratigraphic units}
-  \item{SampleID}{Assigned IDs}
-  \item{Height}{Height in units cm}
-  \item{CaCO3}{Calcium carbonate content in units weight percent of rock}
-  \item{TN}{Total nitrogen in units weight percent of rock}
-  \item{del13Ctoc}{Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite}
-  \item{TOCcfb}{Total organic carbon on carbonate free basis in units weight percent of rock}
-  \item{Al2O3_pc}{XRF Aliminium oxide in units weight percent of rock}
-  \item{Na2O_pc}{XRF Sodium oxide in units weight percent of rock}
-  \item{K2O_pc}{XRF Potasium oxide in units weight percent of rock}
+\item{Section}{Name of the section}
+\item{Strat}{First order stratigraphic units}
+\item{Strat2}{Second order stratigraphic units}
+\item{SampleID}{Assigned IDs}
+\item{Height}{Height in units cm}
+\item{CaCO3}{Calcium carbonate content in units weight percent of rock}
+\item{TN}{Total nitrogen in units weight percent of rock}
+\item{del13Ctoc}{Carbon isotope composition of total organic carbon in units per mille relative to Vienna Peedee Belemnite}
+\item{TOCcfb}{Total organic carbon on carbonate free basis in units weight percent of rock}
+\item{Al2O3_pc}{XRF Aliminium oxide in units weight percent of rock}
+\item{Na2O_pc}{XRF Sodium oxide in units weight percent of rock}
+\item{K2O_pc}{XRF Potasium oxide in units weight percent of rock}
 }
 }
 \source{

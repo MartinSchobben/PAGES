@@ -7,11 +7,11 @@
 PAGES_example(path = NULL)
 }
 \arguments{
-\item{path}{Name of file. If `NULL`, the example files will be listed.}
+\item{path}{Name of file. If \code{NULL}, the example files will be listed.}
 }
 \description{
-This function comes from the package `readr`, and has been modified to access
-the bundled datatsets in directory `inst/extdata` of `PAGES`. This
+This function comes from the package \code{readr}, and has been modified to access
+the bundled datatsets in directory \code{inst/extdata} of \code{PAGES}. This
 function make them easy to access. This function is modified from
 \code{\link[readr:readr_example]{readr_example}} of the package
 \code{\link[readr]{readr}}.
