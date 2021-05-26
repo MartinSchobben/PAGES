@@ -13,3 +13,6 @@
 # R project
 *.Rproj
 inst/doc
+
+# html generated with render_slides
+*.html

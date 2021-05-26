@@ -231,23 +231,23 @@ Step 2 is the subject of the remainder of the course.
 - intermediate steps
 
 ``` r
-kuhjoch_grps <- group_by(kuhjoch, type)
-kuhjoch_mean <- summarise(kuhjoch_grps, count)
+kuhjoch_grps <- group_by(kuhjoch_long, type)
+kuhjoch_ad <- mutate(kuhjoch_grps, count + 1)
 ```
 
 
 - function composition
 
 ``` r
-kuhjoch_mean <- summarise(group_by(kuhjoch, type), count)
+kuhjoch_ad <- mutate(group_by(kuhjoch_long, type), count + 1)
 ```
 
 
 - pipe
 
 ``` r
-kuhjoch_mean <- group_by(kuhjoch, type) %>%
-  summarise(count)
+kuhjoch_ad <- group_by(kuhjoch_long, type) %>%
+  mutate(count + 1)
 ```
 
 <div class="notes">
@@ -372,7 +372,7 @@ ggplot2 will also add a legend that explains which levels correspond to which va
 </div>
 
 
-## Statistical transformations and Facets
+## Statistical transformations and facets
 
 
 Internal (statistical) transformation of `<DATA>`.
