@@ -562,10 +562,10 @@ This was a very simple, exploratory analysis of the data.
 
 Fitting models:
 
-- additive components an interactions (multivariate regression)
+- additive components and interactions (multivariate regression)
 - residual diagnostics to validate the assumptions of the model
-- correlative structures (time series have a correlation between time steps)
-- grouping structures (mixed effect models)
+- correlation structure (time series have a correlation between time steps)
+- grouping structure (mixed effect models)
  
 Further reading:   
 
