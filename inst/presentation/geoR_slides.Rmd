@@ -734,6 +734,19 @@ mutate(
 
 # Break 4
 
+## Recap
+
+**Steps of a data (geo)science project:**     
+
+1) Create an RProject and organised file structure     
+2) Load your data with `readr`      
+3) Wrangle:     
+    - Tidy your data with `tidyr`     
+    - Create new variables, rename and reorder with `dplyr`    
+4) Visualize data with `ggplot2`      
+5) Model and observe patterns with `ggplot2` and other tools     
+6) Reiterate steps 3--5   
+7) Publish or present results along with documentation of intermediate steps
 
 ## PAGES package
 
