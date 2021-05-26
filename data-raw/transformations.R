@@ -14,7 +14,9 @@ bonenburg <- dplyr::mutate(
   .keep = "unused"
   )
 
+# save
 usethis::use_data(bonenburg, overwrite = TRUE)
+readr::write_csv(bonenburg, fs::path("inst/extdata/bonenburg.csv"))
 
 # long format for stratigraphic plots
 bonenburg_long <- tidyr::pivot_longer(
@@ -22,14 +24,18 @@ bonenburg_long <- tidyr::pivot_longer(
   -c(section, strat, strat2, sampleid, height),
   names_to = "measurement"
   )
+
 # save
 usethis::use_data(bonenburg_long, overwrite = TRUE)
+readr::write_csv(bonenburg_long, fs::path("inst/extdata/bonenburg_long.csv"))
 
-# crossed format for stratigraphic plots
+# crossed format for covariate plot
 bonenburg_cross <- tidyr::pivot_longer(
   bonenburg,
   -c(section, strat, strat2, sampleid, del13Ctoc),
   names_to = "measurement"
   )
+
 # save
 usethis::use_data(bonenburg_cross, overwrite = TRUE)
+readr::write_csv(bonenburg_cross, fs::path("inst/extdata/bonenburg_cross.csv"))

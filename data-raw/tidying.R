@@ -15,7 +15,9 @@ bonenburg_tidy <- dplyr::select(bonenburg_raw, -Reference) %>%
 # reorder variables
 bonenburg_tidy <- dplyr::relocate(bonenburg_tidy, c(section, strat, strat2))
 
+# save and remove
 usethis::use_data(bonenburg_tidy, overwrite = TRUE)
+readr::write_csv(bonenburg_tidy, fs::path("inst/extdata/bonenburg_tidy.csv"))
 file.remove("data/bonenburg_raw.rda")
 
 # palynology with 147 observations
@@ -42,7 +44,9 @@ kuhjoch <- dplyr::rowwise(kuhjoch) %>%
     ) %>%
   dplyr::ungroup()
 
+# save
 usethis::use_data(kuhjoch, overwrite = TRUE)
+readr::write_csv(kuhjoch, fs::path("inst/extdata/kuhjoch.csv"))
 
 # long format
 kuhjoch_long <- tidyr::pivot_longer(
@@ -53,5 +57,7 @@ kuhjoch_long <- tidyr::pivot_longer(
   names_sep = "_"
   )
 
+# save and remove
 usethis::use_data(kuhjoch_long, overwrite = TRUE)
+readr::write_csv(kuhjoch_long, fs::path("inst/extdata/kuhjoch_long.csv"))
 file.remove("data/kuhjoch_raw.rda")
