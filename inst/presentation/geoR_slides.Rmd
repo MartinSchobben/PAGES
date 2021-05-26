@@ -114,6 +114,7 @@ knitr::include_graphics("figures/tidyverse.png")
 
 
 <div class="notes">
+
 ggplot2: 
  - It is modular, so you can mix and combine components to get a unique solution to your unique data exploration queries
  - It automatically draws legends (scaling: a function and its inverse)
@@ -129,16 +130,13 @@ readr:
  - Read plain-text rectangular files into R
 tidyr:
  - Casting data into the tidy format
-modelr:
- - Tidy model solutions
- - Nowadays superseded by the separate package collection.
-</div>
 
+</div>
 
 ## The datasets
 
-- In stratigraphic work we look at variations in a the value of variable through time (or timeseries).   
-- The time unit is measured in height and depth and can sometimes be calibrated for time (agemodel).   
+- In stratigraphic work we look at variations in a the value of variable through time (or time series).   
+- The time unit is measured in height and depth and can sometimes be calibrated for time (age model).   
 - Uniformitarianism principles of geology.  
 - R package `PAGE` has the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology).
 
@@ -157,7 +155,9 @@ knitr::include_graphics("figures/bonenburg.png")
 </div>
 
 <div class="notes">
+
 The bonenburg site has this nice divisions 3 clearly recognisable lithological units.
+
 </div>
 
 
@@ -191,12 +191,14 @@ knitr::include_graphics("figures/rstudio-project-3.png")
 ```
 
 <div class="notes">
+
 At some point you are more interested in the script that generated your figure than that you are interested in the figure it self. Then it is time to collect your data science project in own distinct environment.
-No more need for absolute pathways, only relative pathways witht the project as the lowest directory
+No more need for absolute pathways, only relative pathways with the project as the lowest directory
 
 Rstudio has many more benefits
 - auto-completion of code in scripts and console (with drop down menu)
-- panels with environment objects and istalled packages
+- panels with environment objects and installed packages
+
 </div>
 
 
@@ -216,7 +218,9 @@ knitr::include_graphics("figures/permissions.png")
 
 
 <div class="notes">
+
 Step 2 is the subject of the remainder of the course. 
+
 </div>
 
 
@@ -245,6 +249,14 @@ kuhjoch_mean <- summarise(group_by(kuhjoch, type), count)
 kuhjoch_mean <- group_by(kuhjoch, type) %>%
   summarise(count)
 ```
+
+<div class="notes">
+
+Intermediate steps: many objects clutter your environment and you need new names for every object.     
+Function composition: hard to read---from the inside to the outside. Easy to forget a bracket.      
+Pipe: logical when reading the sequence is also sequence of execution.    
+
+</div>
 
 # Break 1
 
@@ -298,9 +310,11 @@ Grammar of graphics [@Wilkinson2005]
 
 
 <div class="notes">
+
 Together, the data, mappings, geom, stat and position form a layer.
 The facets are a sub-setting or splitting of the data to highlight certain aspects of the data.
 The latter is useful for geochemical multi-proxy studies or count datasets.
+
 </div>
 
 
@@ -316,19 +330,24 @@ ggplot(data = bonenburg) +
 
 
 <div class="notes">
+
 Variation: the tendency of values to change from measurement to measurement.
-An ad-hoc hypothesis is that del13C reflect on changes in the C cycle through time
-The aesthetics function maps your data to a visual property of the objects in your plot
-ggplot::aes() can be mapped to a variable or a constant
+An ad-hoc hypothesis is that del13C reflect on changes in the C cycle through time.
+The aesthetics function maps your data to a visual property of the objects in your plot.
+ggplot::aes() can be mapped to a variable or a constant.
 We can now look at variation in del13C through time which we often tend to link to temporal change sin the carbon cycle.
-But of course we now that this is a simplistic view and many proxy can be biased due to compositional changes and diagenesis.
+But, of course, we know that this is a simplistic view and proxies can be biased due to diagenesis and compositional changes.
+
 </div>
 
 
 ## Aesthetics mapping {data-background="figures/bonenburg.png"}
 
+
 <div class="notes">
-Remember that the stratigraphy clearly displays a subdivision.
+
+Remember that the stratigraphy of Bonenburg clearly displays a subdivision into three major units.
+
 </div>
 
 
@@ -345,8 +364,11 @@ ggplot(data = bonenburg) +
 
 
 <div class="notes">
+
 The stratigraphy is a ordered categorical value.
-ggplot2 will automatically assign a unique level of the aesthetic (here a unique color) to each unique value of the variable, a process known as scaling. ggplot2 will also add a legend that explains which levels correspond to which values.
+ggplot2 will automatically assign a unique level of the aesthetic (here a unique colour) to each unique value of the variable, a process known as scaling. 
+ggplot2 will also add a legend that explains which levels correspond to which values.
+
 </div>
 
 
@@ -395,8 +417,10 @@ knitr::include_graphics("figures/EDA-boxplot.png")
 </div>
 
 <div class="notes">
+
 In the following example, I will use a bivariate comparison of a continuous and a categorical variable.
-Hence I will use a boxplot to compare several distributions.
+Hence, I will use a boxplot to compare several distributions.
+
 </div>
 
 
@@ -410,7 +434,11 @@ ggplot(data = bonenburg) +
 
 
 <div class="notes">
-The geom geom_boxplot does a statistical transformation of the continuous variable del13Ctoc. It does this with the argument `stat` which is set to `"boxplot"`. But this is default behaviour so you do not have to supply it
+
+- The geom geom_boxplot() does a statistical transformation of the continuous variable del13Ctoc.    
+- It does this with the argument `stat` which is set to `"boxplot"`.     
+- But this is default behaviour, so you do not have to supply it explicitly.  
+
 </div>
 
 
@@ -423,7 +451,7 @@ ggplot(data = bonenburg) +
 ```
 
 <div class="notes">
-note that here I have also added a scale transformation in the mapping argument which reorder the categorerical variable to height. ANd as such following the stratigraphic principles again. Only ever apply simple function in this way
+note that here I have also added a scale transformation in the mapping argument which reorder the categorical variable to height. ANd as such following the stratigraphic principles again. Only ever apply simple function in this way
 </div>
 
 
@@ -441,9 +469,11 @@ ggplot(data = bonenburg_long) +
 
 
 <div class="notes">
-Useful for the multi-proxy stratigraphic study!  
-Note, however, that I have transformed the dataset into a long format data frame. 
+
+Useful for the multi-proxy stratigraphic study!    
+Note, however, that I have transformed the dataset into a long format data frame.      
 I will explain this concept later-on.
+
 </div>
 
 
@@ -589,13 +619,15 @@ Description on website: "In many cases, these functions will just work"!
 Reversely, you can also write back to several file formats with `write_*`
 
 <div class="notes">
-- Flat files into data frames
-- First line of the data for the column names
-- readr uses a heuristic to figure out the type of each column: it reads the first 1000 rows
-- Compare with base
-  - Typically much faster (~10x) than their base equivalents
-  - Don’t convert character vectors to factors
-  - They are more reproducible
+
+- Flat files into data frames.    
+- First line of the data for the column names.    
+- readr uses a heuristic to figure out the type of each column: it reads the first 1000 rows.    
+- Compare with base:     
+  - Typically much faster (~10x) than their base equivalents       
+  - Don’t convert character vectors to factors     
+  - They are more reproducible     
+  
 </div>
 
 
@@ -668,13 +700,12 @@ knitr::include_graphics("figures/dplyr.png")
 
 </div>
 
-
 <div class="notes">
 
-mutate - adds new variables that are functions of existing variables
-select - picks variables based on their names     
-filter - picks cases based on their values     
-arrange - changes the ordering of the rows   
+mutate - adds new variables that are functions of existing variables.     
+select - picks variables based on their names.           
+filter - picks cases based on their values.          
+arrange - changes the ordering of the rows.        
 
 </div>
 
