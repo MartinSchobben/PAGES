@@ -111,7 +111,6 @@ knitr::include_graphics("figures/tidyverse.png")
 - **dplyr**: Getting data into the right format
 - **readr**: Opinionated import tools for rectangular data.
 - **tidyr**: Cast data into a consistent tidy format
-- **modelr**: Tidy models (largely superseded by **tidymodels**)
 
 
 <div class="notes">
@@ -495,40 +494,36 @@ ggplot(data = bonenburg_cross, mapping = aes(x = value, y = del13Ctoc)) +
 ## Transforming variables {.columns-2}
 
 
-```{r lm, message=FALSE}
+```{r lm, message=FALSE, fig.height=2, fig.width=4}
 ggplot(
   bonenburg, 
   aes(x = TOCcfb, y = del13Ctoc)
   ) +
-  geom_point() +
+  geom_point(aes(colour = strat)) +
   geom_smooth(method = "lm") 
+```
+
+
+``` r
+lm(del13Ctoc ~ TOCcfb, bonenburg)
 ```
 
 <p class="forceBreak"></p>
 
 
-```{r loglm, message=FALSE}
+```{r loglm, message=FALSE, fig.height=2, fig.width=4}
 ggplot(
   bonenburg, 
   aes(x = log(TOCcfb), y = del13Ctoc)
   ) +
-  geom_point() +
+  geom_point(aes(colour = strat)) +
   geom_smooth(method = "lm") 
 ```
 
 
-## Modelling
-
-
-```{r modelr, fig.width=5}
-library(modelr)
-
-mod <- lm(del13Ctoc ~ log(TOCcfb), data = bonenburg)
-
-ggplot(data =  add_residuals(bonenburg, mod)) +
-  geom_point(mapping = aes(x = K_Al, y = resid, color = strat))
+``` r
+lm(del13Ctoc ~ log(TOCcfb), bonenburg)
 ```
-
 
 ## Regression models
 
@@ -546,7 +541,8 @@ Further reading:
 
 - Peter Dalgaard 2008 *Introduction to statistics with R*   
 - John Fox & Sanford Weisberg 2018 *An R companion to applied regression*   
-- Alain Zuur 2008 *Mixed Effects Models and Extensions in Ecology with R*   
+- Alain Zuur  et al. 2008 *Mixed Effects Models and Extensions in Ecology with R*  
+
 
 ---
 nocite: | 
@@ -599,7 +595,7 @@ Reversely, you can also write back to several file formats with `write_*`
 - Compare with base
   - Typically much faster (~10x) than their base equivalents
   - Don’t convert character vectors to factors
-   -They are more reproducible
+  - They are more reproducible
 </div>
 
 
@@ -661,16 +657,27 @@ knitr::include_graphics("figures/dplyr.png")
 <p class="forceBreak"></p>
 
 
-- `mutate()` adds new variables that are functions of existing variables
-- `select()` picks variables based on their names.
-- `filter()` picks cases based on their values.
-- `summarise()` reduces multiple values down to a single summary.
-- `arrange()` changes the ordering of the rows.
+- `mutate()` e.g., K/Al from K and Al
+- `select()` e.g., pick height and K/Al 
+- `filter()` e.g., all observations above 3 meters
+- `summarise()` e.g., combined with `group_by()` calculate mean value of K/Al for lithological units
+- `arrange()` e.g., arrange ascending with height
 
 
 **grouping**: `group_by()` or `rowwise()`
 
 </div>
+
+
+<div class="notes">
+
+mutate - adds new variables that are functions of existing variables
+select - picks variables based on their names     
+filter - picks cases based on their values     
+arrange - changes the ordering of the rows   
+
+</div>
+
 
 ## Transforming variables
 
