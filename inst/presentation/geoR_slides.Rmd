@@ -135,10 +135,10 @@ tidyr:
 
 ## The datasets
 
-- In stratigraphic work we look at variations in a the value of variable through time (or time series).   
-- The time unit is measured in height and depth and can sometimes be calibrated for time (age model).   
-- Uniformitarianism principles of geology.  
-- R package `PAGE` has the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology).
+- In stratigraphy we look at variations in the value of a variable through time (or time series).   
+- The time unit is measured in height or depth, and can sometimes be calibrated for absolute time (age model).   
+ 
+- R package `PAGE` contains the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology).
 
 <div class="columns-2">
 
@@ -713,6 +713,7 @@ arrange - changes the ordering of the rows.
 ## Transforming variables
 
 XRF oxides and normalization with elemental ratios
+
 
 ```{r oxides, eval=FALSE}
 mutate(
