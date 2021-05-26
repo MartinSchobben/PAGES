@@ -57,7 +57,7 @@ knitr::include_graphics("figures/datascience.png")
 
 3. Modelling   
 
-4. Wrangling    
+4. Wrangling (Load, Tidy and Transform)    
 
 **Each section:**    
 5--10 minutes of introduction    
