@@ -158,7 +158,7 @@ tidyr:
 
 - The time unit is measured in height or depth, and can sometimes be calibrated for absolute time (age model).   
  
-- R package `PAGE` contains the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology). For more information on the dataset use `?` (`?bonenburg`).
+- R package `PAGES` contains the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology). For more information on the dataset use `?` (`?bonenburg`).
 
 <div class="columns-2">
 
