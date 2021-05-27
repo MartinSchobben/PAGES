@@ -127,28 +127,28 @@ knitr::include_graphics("figures/tidyverse.png")
 
 <div class="notes">
 
-opinionated:
-  - For instance, how a tidy data frame should look like.
-  - Shows messages and warnings. 
-    - For example, which aesthetics work for which data type.
-    - Missing values, or NAs (“not availables”)
-  - Throws error when data types are not the same. 
-    - Transforming (if_else).
-ggplot2: 
- - It is modular, so you can mix and combine components to get a unique solution to your unique data exploration queries
- - It automatically draws legends (scaling: a function and its inverse)
- - It has carefully selected default settings
- - It is iterative (explore step-by-step)
- - It can perform statistical transformations on the data
-dplyr:
- - Manipulating the data
- - New variables
- - Summaries
- - Filter or reorder observations
-readr:
- - Read plain-text rectangular files into R
-tidyr:
- - Casting data into the tidy format
+opinionated:      
+  - For instance, how a tidy data frame should look like.      
+  - Shows messages and warnings.     
+    - For example, which aesthetics work for which data type.     
+    - Missing values, or NAs (“not availables”).     
+  - Throws error when data types are not the same.     
+    - Transforming (if_else).     
+ggplot2:     
+ - It is modular, so you can mix and combine components to get a unique solution to your unique data exploration queries    
+ - It automatically draws legends (scaling: a function and its inverse)     
+ - It has carefully selected default settings    
+ - It is iterative (explore step-by-step)     
+ - It can perform statistical transformations on the data     
+dplyr:    
+ - Manipulating the data    
+ - New variables    
+ - Summaries    
+ - Filter or reorder observations    
+readr:    
+ - Read plain-text rectangular files into R    
+tidyr:    
+ - Casting data into the tidy format      
 
 </div>
 
@@ -331,9 +331,9 @@ Grammar of graphics [@Wilkinson2005]
 
 <div class="notes">
 
-Together, the data, mappings, geom, stat and position form a layer.
-The facets are a sub-setting or splitting of the data to highlight certain aspects of the data.
-The latter is useful for geochemical multi-proxy studies or count datasets.
+Together, the data, mappings, geom, stat and position form a layer.    
+The facets are a sub-setting or splitting of the data to highlight certain aspects of the data.    
+The latter is useful for geochemical multi-proxy studies or count datasets.     
 
 </div>
 
@@ -351,12 +351,12 @@ ggplot(data = bonenburg) +
 
 <div class="notes">
 
-Variation: the tendency of values to change from measurement to measurement.
-An ad-hoc hypothesis is that del13C reflect on changes in the C cycle through time.
-The aesthetics function maps your data to a visual property of the objects in your plot.
-ggplot::aes() can be mapped to a variable or a constant.
-We can now look at variation in del13C through time which we often tend to link to temporal change sin the carbon cycle.
-But, of course, we know that this is a simplistic view and proxies can be biased due to diagenesis and compositional changes.
+Variation: the tendency of values to change from measurement to measurement.      
+An ad-hoc hypothesis is that del13C reflect on changes in the C cycle through time.     
+The aesthetics function maps your data to a visual property of the objects in your plot.     
+ggplot::aes() can be mapped to a variable or a constant.     
+We can now look at variation in del13C through time which we often tend to link to temporal change sin the carbon cycle.   
+But, of course, we know that this is a simplistic view and proxies can be biased due to diagenesis and compositional changes.     
 
 </div>
 
@@ -385,9 +385,9 @@ ggplot(data = bonenburg) +
 
 <div class="notes">
 
-The stratigraphy is a ordered categorical value.
-ggplot2 will automatically assign a unique level of the aesthetic (here a unique colour) to each unique value of the variable, a process known as scaling. 
-ggplot2 will also add a legend that explains which levels correspond to which values.
+The stratigraphy is a ordered categorical value.     
+ggplot2 will automatically assign a unique level of the aesthetic (here a unique colour) to each unique value of the variable, a process known as scaling.     
+ggplot2 will also add a legend that explains which levels correspond to which values.     
 
 </div>
 
@@ -438,8 +438,8 @@ knitr::include_graphics("figures/EDA-boxplot.png")
 
 <div class="notes">
 
-In the following example, I will use a bivariate comparison of a continuous and a categorical variable.
-Hence, I will use a boxplot to compare several distributions.
+In the following example, I will use a bivariate comparison of a continuous and a categorical variable.     
+Hence, I will use a boxplot to compare several distributions.    
 
 </div>
 
@@ -455,9 +455,9 @@ ggplot(data = bonenburg) +
 
 <div class="notes">
 
-- The geom geom_boxplot() does a statistical transformation of the continuous variable del13Ctoc.    
-- It does this with the argument `stat` which is set to `"boxplot"`.     
-- But this is default behaviour, so you do not have to supply it explicitly.  
+- The geom geom_boxplot() does a statistical transformation of the continuous variable del13Ctoc.        
+- It does this with the argument `stat` which is set to `"boxplot"`.       
+- But this is default behaviour, so you do not have to supply it explicitly.    
 
 </div>
 
@@ -471,7 +471,10 @@ ggplot(data = bonenburg) +
 ```
 
 <div class="notes">
-note that here I have also added a scale transformation in the mapping argument which reorder the categorical variable to height. ANd as such following the stratigraphic principles again. Only ever apply simple function in this way
+
+Note that here I have also added a scale transformation in the mapping argument which reorder the categorical variable to height.     
+Only ever apply simple functions in this way in the ggplot mapping.   
+
 </div>
 
 
@@ -490,9 +493,9 @@ ggplot(data = bonenburg_long) +
 
 <div class="notes">
 
-Useful for the multi-proxy stratigraphic study!    
-Note, however, that I have transformed the dataset into a long format data frame.      
-I will explain this concept later-on.
+Useful for the multi-proxy stratigraphic study!     
+Note, however, that I have transformed the dataset into a long format data frame.        
+I will explain this concept later-on.    
 
 </div>
 
@@ -645,7 +648,7 @@ Reversely, you can also write back to several file formats with `write_*`
 - readr uses a heuristic to figure out the type of each column: it reads the first 1000 rows.    
 - Compare with base:     
   - Typically much faster (~10x) than their base equivalents       
-  - Don’t convert character vectors to factors     
+  - Don’t convert character vectors to factors      
   - They are more reproducible     
   
 </div>
@@ -722,17 +725,17 @@ knitr::include_graphics("figures/dplyr.png")
 
 <div class="notes">
 
-mutate - adds new variables that are functions of existing variables.     
-select - picks variables based on their names.           
-filter - picks cases based on their values.          
-arrange - changes the ordering of the rows.        
+mutate - adds new variables that are functions of existing variables.       
+select - picks variables based on their names.             
+filter - picks cases based on their values.             
+arrange - changes the ordering of the rows.          
 
 </div>
 
 
 ## Transforming variables
 
-XRF oxides and normalization with elemental ratios
+XRF oxides and normalization with elemental ratios.
 
 
 ```{r oxides, eval=FALSE}
