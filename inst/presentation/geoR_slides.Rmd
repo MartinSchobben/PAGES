@@ -82,6 +82,11 @@ Load PAGES with library.
 library(PAGES)
 ```
 
+<div class="notes">
+80% of data analysis is spent on the cleaning and preparing data. 
+</div>
+
+
 ## R for Data Science (R4DS) {.columns-2}
 
 
@@ -107,7 +112,7 @@ knitr::include_graphics("figures/cover.png")
 ## Tidyverse
 
 
-The tidyverse universe: opinionated collection of R packages designed for data science
+The tidyverse universe: opinionated collection of R packages designed for data science.
 
 
 ```{r tidyverse, echo=FALSE}
@@ -122,6 +127,13 @@ knitr::include_graphics("figures/tidyverse.png")
 
 <div class="notes">
 
+opinionated:
+  - For instance, how a tidy data frame should look like.
+  - Shows messages and warnings. 
+    - For example, which aesthetics work for which data type.
+    - Missing values, or NAs (“not availables”)
+  - Throws error when data types are not the same. 
+    - Transforming (if_else).
 ggplot2: 
  - It is modular, so you can mix and combine components to get a unique solution to your unique data exploration queries
  - It automatically draws legends (scaling: a function and its inverse)
@@ -187,8 +199,8 @@ knitr::include_graphics("figures/data-science.png")
 ## Data (geo)science project
 
 
-1) Beginner: Emphasis on R objects and output
-2) Expert: Emphasis on scripts and functions
+- **Beginner:** Emphasis on R objects and output.
+- **Expert:** Emphasis on scripts and functions.
 
 RStudio projects
 
@@ -201,11 +213,11 @@ knitr::include_graphics("figures/rstudio-project-3.png")
 <div class="notes">
 
 At some point you are more interested in the script that generated your figure than that you are interested in the figure it self. Then it is time to collect your data science project in own distinct environment.
-No more need for absolute pathways, only relative pathways with the project as the lowest directory
+No more need for absolute pathways, only relative pathways with the project as the lowest directory.
 
-Rstudio has many more benefits
-- auto-completion of code in scripts and console (with drop down menu)
-- panels with environment objects and installed packages
+Rstudio has many more benefits:
+- auto-completion of code in scripts and console (with drop down menu).
+- panels with environment objects and installed packages.
 
 </div>
 
@@ -238,24 +250,24 @@ Step 2 is the subject of the remainder of the course.
 
 - intermediate steps
 
-``` r
+```{r}
 kuhjoch_grps <- group_by(kuhjoch_long, type)
-kuhjoch_ad <- mutate(kuhjoch_grps, count + 1)
+kuhjoch_sum <- summarise(kuhjoch_grps, mean(count))
 ```
 
 
 - function composition
 
-``` r
-kuhjoch_ad <- mutate(group_by(kuhjoch_long, type), count + 1)
+```{r}
+kuhjoch_sum <- summarise(group_by(kuhjoch_long, type), mean(count))
 ```
 
 
 - pipe
 
-``` r
-kuhjoch_ad <- group_by(kuhjoch_long, type) %>%
-  mutate(count + 1)
+```{r}
+kuhjoch_sum <- group_by(kuhjoch_long, type) %>%
+  summarise(mean(count))
 ```
 
 <div class="notes">
@@ -328,7 +340,7 @@ The latter is useful for geochemical multi-proxy studies or count datasets.
 
 ## Aesthetics mapping
 
-Scatterplot: maps each observation to a **horizontal** and **vertical** position and the `geom` represents this as a point 
+Scatterplot: maps each observation to a **horizontal** and **vertical** position and the `geom` represents this as a point. 
 
 
 ```{r aes}
@@ -466,7 +478,7 @@ note that here I have also added a scale transformation in the mapping argument 
 ## Facets
 
 
-The facets splits data according to a categorical variable.   
+The facets split data according to a categorical variable.   
 
 
 ```{r strat, fig.width=10}
@@ -518,7 +530,7 @@ ggplot(data = bonenburg_cross, mapping = aes(x = value, y = del13Ctoc)) +
 ```
 
 
-## Co-variation continuous-continuous
+## Co-variation continuous--continuous
 
 
 ```{r cross2, fig.width=9, fig.height=4, message=FALSE}
@@ -570,11 +582,11 @@ This was a very simple, exploratory analysis of the data.
 
 Fitting models:
 
-- additive components and interactions (multivariate regression)
-- residual diagnostics to validate the assumptions of the model
-- correlation structure (time series have a correlation between time steps)
-- grouping structure (mixed effect models)
- 
+- Additive components and interactions (multivariate regression).      
+- Residual diagnostics to validate the assumptions of the model.     
+- Correlation structure (time series have a correlation between time steps).    
+- Grouping structure (mixed effect models).   
+
 Further reading:   
 
 - Peter Dalgaard 2008 *Introduction to statistics with R*   
@@ -616,7 +628,7 @@ knitr::include_graphics("figures/readr.png")
 ```
 </div>
 
-Load your data into R with `readr` package
+Load your data into R with the `readr` package:
 
 - `read_csv()`: comma separated (CSV) files
 - `read_tsv()`: tab separated files
@@ -746,20 +758,20 @@ mutate(
 
 **Steps of a data (geo)science project:**     
 
-1) Create an RProject and organised file structure     
-2) Load your data with `readr`      
+1) Create an RProject and organised file structure.       
+2) Load your data with `readr`.      
 3) Wrangle:     
-    - Tidy your data with `tidyr`     
-    - Create new variables, rename and reorder with `dplyr`    
-4) Visualize data with `ggplot2`      
-5) Model and observe patterns with `ggplot2` and other tools     
-6) Reiterate steps 3--5   
-7) Publish or present results along with documentation of intermediate steps
+    - Tidy your data with `tidyr`.     
+    - Create new variables, rename and reorder with `dplyr`.    
+4) Visualize data with `ggplot2`.      
+5) Model and observe patterns with `ggplot2` and other tools.     
+6) Reiterate steps 3--5.   
+7) Publish or present results along with documentation of intermediate steps.
 
 ## PAGES package
 
 **Data**   
-lazy load data: `bonenburg` and `kuhjoch` as well as the long formats: `bonenburg_long` and `kuhjoch_long`   
+lazy load data: `bonenburg` and `kuhjoch` as well as the long formats: `bonenburg_long` and `kuhjoch_long`.   
 
 **Raw data**   
 `PAGES_example()`   

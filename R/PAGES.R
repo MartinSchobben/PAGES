@@ -7,5 +7,5 @@
 #' @importFrom thematic thematic_on
 #'
 #' @docType package
-#' @name point
+#' @name PAGES
 NULL

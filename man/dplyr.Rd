@@ -4,6 +4,7 @@
 \alias{dplyr}
 \alias{mutate}
 \alias{group_by}
+\alias{summarise}
 \title{dplyr functions used in PAGES seminar}
 \description{
 \itemize{
@@ -11,6 +12,8 @@
 \code{\link[tibble:tibble]{tibble}} to a grouped \code{tibble} where operations
 are performed group-wise.
 \item \code{\link[dplyr:mutate]{mutate}()} Transform a variable of a
+\code{\link[tibble:tibble]{tibble}}
+\item \code{\link[dplyr:mutate]{summarise}()} Summarise a variable of a
 \code{\link[tibble:tibble]{tibble}}
 }
 
