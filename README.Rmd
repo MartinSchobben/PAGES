@@ -153,6 +153,25 @@ ggplot(data = bonenburg_long) +
   theme_classic()
 ```
 
+# Further reading
+
+**Data science with R**      
+Hadley Wickham & Garrett Grolemund 2016 *R for Data Science*     
+
+**General statistics with R**      
+Peter Dalgaard 2008 *Introduction to statistics with R*       
+
+**Regression with R**    
+John Fox & Sanford Weisberg 2018 *An R companion to applied regression*      
+
+**Mixed effect models with R**     
+Alain Zuur  et al. 2008 *Mixed Effects Models and Extensions in Ecology with R*    
+
+
+---
+nocite: | 
+  @Dalgaard2008; @Fox2018; @Zuur2008; @Wickham2016
+...
 
 
 # References

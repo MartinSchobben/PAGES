@@ -143,6 +143,21 @@ ggplot(data = bonenburg_long) +
 ![Bonenburg geochemical data traversing the Triassic-Jurassic
 boundary.](man/figures/README-strat-1.png)
 
+# Further reading
+
+**Data science with R**  
+Hadley Wickham & Garrett Grolemund 2016 *R for Data Science*
+
+**General statistics with R**  
+Peter Dalgaard 2008 *Introduction to statistics with R*
+
+**Regression with R**  
+John Fox & Sanford Weisberg 2018 *An R companion to applied regression*
+
+**Mixed effect models with R**  
+Alain Zuur et al. 2008 *Mixed Effects Models and Extensions in Ecology
+with R*
+
 # References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
@@ -161,6 +176,21 @@ Richard Iannone. 2021. *Rmarkdown: Dynamic Documents for r*.
 Bache, Stefan Milton, and Hadley Wickham. 2020. *Magrittr: A
 Forward-Pipe Operator for r*.
 <https://CRAN.R-project.org/package=magrittr>.
+
+</div>
+
+<div id="ref-Dalgaard2008" class="csl-entry">
+
+Dalgaard, Peter. 2008. *<span class="nocase">Introduction to statistics
+with R</span>*. Edited by J Chambers, D Hand, and W. Hardle. Springer.
+<https://doi.org/10.1201/9780429341830-12>.
+
+</div>
+
+<div id="ref-Fox2018" class="csl-entry">
+
+Fox, John, and Sanford Weisberg. 2018. *<span class="nocase">An R
+companion to applied regression</span>*. Sage publications.
 
 </div>
 
@@ -326,6 +356,15 @@ Definitive Guide*. Boca Raton, Florida: Chapman; Hall/CRC.
 Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. *R Markdown
 Cookbook*. Boca Raton, Florida: Chapman; Hall/CRC.
 <https://bookdown.org/yihui/rmarkdown-cookbook>.
+
+</div>
+
+<div id="ref-Zuur2008" class="csl-entry">
+
+Zuur, Alain F., Elena N. Ieno, Neil J. Walker, Anatoly A. Saveliev, and
+Graham M. Smith. 2008. *<span class="nocase">Mixed Effects Models and
+Extensions in Ecology with R</span>*.
+<https://doi.org/10.4324/9780429201271-2>.
 
 </div>
 

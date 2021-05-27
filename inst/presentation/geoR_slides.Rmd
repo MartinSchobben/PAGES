@@ -67,13 +67,20 @@ knitr::include_graphics("figures/datascience.png")
 ## PAGES R package
 
 ``` r
-> # Install PAGES from GitHub:
-> # install.packages("devtools") 
-> devtools::install_github("MartinSchobben/PAGES", build_vignettes = TRUE)
+# Install PAGES from GitHub:
+# install.packages("devtools") 
+devtools::install_github("MartinSchobben/PAGES", build_vignettes = TRUE)
 ```
 - webpage: https://martinschobben.github.io/PAGES/index.html  
 - github repo: https://github.com/MartinSchobben/PAGES
 
+</br>
+
+Load PAGES with library.
+
+``` r
+library(PAGES)
+```
 
 ## R for Data Science (R4DS) {.columns-2}
 
@@ -136,9 +143,10 @@ tidyr:
 ## The datasets
 
 - In stratigraphy we look at variations in the value of a variable through time (or time series).   
+
 - The time unit is measured in height or depth, and can sometimes be calibrated for absolute time (age model).   
  
-- R package `PAGE` contains the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology).
+- R package `PAGE` contains the lazy load data: `bonenburg` (geochemistry) and `kuhjoch` (palynology). For more information on the dataset use `?` (`?bonenburg`).
 
 <div class="columns-2">
 
