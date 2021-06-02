@@ -15,6 +15,9 @@ useful pointers to explore geological data, in particular stratigraphic
 occurrences, and uses RStudio and packages from the [tidyverse
 universe](https://www.tidyverse.org/packages/).
 
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=r99jsChi4HU" frameborder="0" allowfullscreen>
+</iframe>
+
 ## R for Data Science (R4DS)
 
 This class is modelled after Hadley Wickham’s and Garrett Grolemund’s
